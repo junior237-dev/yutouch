@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="appvue">
     <head-vuejs />
-    <main-vuejs class="siteContainer"/>
+    <main-vuejs/>
     <foot-vuejs />
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
- #app {
+ #appvue {
    padding: 0;
    margin: 0;
    box-sizing: border-box;

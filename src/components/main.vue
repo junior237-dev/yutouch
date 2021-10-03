@@ -1,9 +1,9 @@
 <template>
-    <div class="big-intro-wrapper h-auto w-full relative md:mb-16">
+    <div class="big-intro-wrapper h-auto w-full relative md:mb-16 lg:20 lg:absolute lg:top-0 lg:z-20 lg:left-0 lg:right-0">
         <div class="banner w-full h-80 bg-cover bg-opacity-25 bg-center bg-no-repeat"></div>
         <div class="big-intro py-5 bg-black bg-opacity-40 text-white h-auto absolute top-0 right-0 left-0 bottom-0">
-            <div class="content md:w-4/6 mx-auto md:mt-8">
-                <h1 class="big-intro-title w-4/5 md:w-full md:text-3xl  mx-auto font-light text-2xl leading-9">Développez vos compétences numériques avec nos cours 100% professionnels</h1>
+            <div class="content md:w-4/6 mx-auto md:mt-8 lg:mt-28">
+                <h1 class="big-intro-title w-4/5 md:w-full md:text-2xl  mx-auto font-light text-2xl leading-9">Développez vos compétences numériques avec nos cours 100% professionnels</h1>
                 <div class="spacer h-8"></div>
                 <h2 class="label w-4/6 mx-auto font-extralight text-xs leading-5 hidden md:block md:text-base">
                     Grâce à nos formations en ligne, sécurisez votre avenir en misant sur vos compétences 
@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="container-category w-full mt-10">
+    <div class="container-category w-full mt-10 lg:mt-96 lg:pt-32">
         <div class="category-title text-left w-4/5 mx-auto mb-2 md:flex md:justify-between md:mb-3">
             <h2 class="title text-2xl text-gray-700 mb-1">Tutos les plus populaires</h2>
             <a href="/" class="link_categories text-blue-500 text-base">voir tous les meilleurs atéliers</a>
@@ -128,6 +128,12 @@ export default {
     @media screen and (min-width: 784px) {
         .banner {
             height: 400px
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .banner {
+            height: 450px
         }
     }
 
