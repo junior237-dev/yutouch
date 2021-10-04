@@ -1,7 +1,7 @@
 <template>
     <nav class="header_bar w-full left-0 h-24 bg-pink-700 mb-0 lg:bg-transparent lg:absolute lg:top-0 lg:left-0 lg:right-0 lg:z-30">
         <div class="navbar w-full h-full py-4 relative lg:flex lg:justify-between lg:mx-auto lg:w-5/6">
-            <div class="smal_menu_and_logo w-auto float-left ml-3 lg:float-none">
+            <div class="small_menu_and_logo w-auto float-left ml-3 lg:float-none">
                 <menu-small-media/>
                 <a href="/" class="logo inline-block"><img src="../assets/yutouch.jpg" alt="logo" class="object-cover h-14 w-14 rounded-full"></a>
             </div>
@@ -32,6 +32,6 @@ export default {
         transition: color .4s ease
     }
     a.basket i:hover {
-        color: #4cd8eb; 
+        color: #e2288b; 
     }
 </style>

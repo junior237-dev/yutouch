@@ -29,6 +29,6 @@
         transition: color .4s ease
     }
     div.menu-big-media li:hover {
-        color: #4cd8eb; 
+        color: #e2288b; 
     }
 </style>
