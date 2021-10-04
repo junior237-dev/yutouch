@@ -1,5 +1,5 @@
 <template>
-    <!-- <headerVue /> -->
+   <Fixed_navbar />
   <div class="banner">
     <div class="video_container">
         <div class="video">
@@ -20,15 +20,18 @@
         </ul>
     </div>
   </div>
+  <Sidebar />
 </template>
 
 <script>
-// import headerVue from "./header.vue"
+import Sidebar from "./sidebar.vue";
+import Fixed_navbar from "./fixed_navbar.vue";
 
 export default {
     name: 'banner',
     components: {
-    //    headerVue 
+        Sidebar,
+        Fixed_navbar
     }
 }
 </script>
@@ -51,20 +54,12 @@ export default {
         }
 
         .video {
-            overflow: hidden;
-            height: 40vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            height: fit-content;
 
             video {
-                position: absolute;
-                top: 0;
-                left: 0;
                 object-fit: cover;
-                height: 100%;
-                width: 100%;
+                max-height: 40vh;
+                width: 100%; 
             }
         }
     }
@@ -108,6 +103,8 @@ export default {
         }
     }
 
+     
+
     @media screen and (max-width: 975px) {
         flex-direction: column;
         justify-content: center;
@@ -124,74 +121,35 @@ export default {
         }
     }
 
-    @media screen and (max-width: 678px) {
-        .video_container {
-            .video {
-                height: 35vh;
-            }
-        }
-    }
-
-    @media screen and (max-width: 574px) {
-        .video_container {
-            .video {
-                height: 30vh;
-            }
-        }
-    }
-
-    @media screen and (max-width: 495px) {
-        .video_container {
-            .video {
-                height: 27vh;
-            }
-        }
-    }
-
-     @media screen and (max-width: 433px) {
-        .video_container {
-            .video {
-                height: 25vh;
-            }
-        }
-    }
-
     @media screen and (max-width: 396px) {
         .infos {
             button {
                 width: 65%;
-                padding: 6px;
-                font-size: 15px;
+                
             }
         }
     }
 
-    @media screen and (max-width: 359px) {
-        .video_container {
-            .video {
-                height: 21vh;
-            }
-        }
-
+    @media screen and (max-width: 321px) {
         .infos {
             button {
-                width: 60%;
+                width: 65%;
+            }
+            .prix {
+                font-size: 18px;
             }
         }    
     }
 
-    @media screen and (max-width: 284px) {
-        .video_container {
-            .video {
-                height: 18vh;
-            }
-        }
-
+    @media screen and (max-width: 310px) {
         .infos {
-            .prix {
-                font-size: 10px;
-                color: #3f4348;
+            button {
+                width: 70%;
             }
+
+            .prix {
+                font-size: 16px;
+            } 
         }    
     }
 }
