@@ -18,7 +18,7 @@
             <h2 class="title text-2xl text-gray-700 mb-1">Tutos les plus populaires</h2>
             <a href="/" class="link_categories text-blue-500 text-base">voir tous les meilleurs atéliers</a>
         </div>
-        <div class="categories-element text-left w-4/5 mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-2">
+        <div class="categories-element text-left w-4/5 mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-4">
             <div class="category-element w-full mb-2">
                 <div class="banner-category-element relative">
                     <img src="../assets/yutouch_image.jpg" alt="" class="object-cover w-max h-auto">
@@ -133,7 +133,7 @@ export default {
 
     @media screen and (min-width: 900px) {
         .banner {
-            height: 450px
+            height: 500px
         }
     }
 
