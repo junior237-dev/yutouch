@@ -19,7 +19,7 @@
                 </ul>
             </div>
             <a href="" class="block float-right mr-3 my-4 relative lg:float-none">
-                <i  class="material-icons text-white font-bold text-3xl inline-block absolute  right-10">shopping_cart</i>
+                <i class="material-icons text-white font-bold text-3xl inline-block absolute  right-10">shopping_cart</i>
                 <span class="inline-block h-7 w-7 text-black bg-white text-lg rounded-full absolute top-1 right-3">3</span>
             </a>
         </div>
