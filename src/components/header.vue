@@ -32,6 +32,6 @@ export default {
         transition: color .4s ease
     }
     a.basket i:hover {
-        color: #e2288b; 
+        color: rgba(226, 55, 12, 0.883); 
     }
 </style>
