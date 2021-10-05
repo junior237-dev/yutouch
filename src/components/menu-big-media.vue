@@ -1,10 +1,10 @@
 <template>
     <div class="menu-big-media w-5/6 h-auto my-5 hidden lg:flex lg:justify-between relative">
         <ul class="first-part w-1/2 flex justify-between text-white text-sm font-light mr-9">
-            <li class=" cursor-pointer flex items-center active-item-menu" @click="showformationpanel"><a>Formations</a><i class="material-icons tiny">arrow_drop_down</i></li>
+            <li class=" cursor-pointer flex items-center" @click='showformationpanel'><a>Formations</a><i class="material-icons tiny">arrow_drop_down</i></li>
             <li class=" cursor-pointer"><a>Parcours  Pro</a></li>
             <li class=" cursor-pointer"><a>Promo</a></li>
-            <li class=" cursor-pointer rounded-full"><a><i class="material-icons">search</i></a></li>
+            <li class=" cursor-pointer rounded-full active-item-menu" @click='showsearchbarfunction'><i class="material-icons">search</i></li>
         </ul>
         <ul class="second-part w-1/2 flex justify-around text-white text-sm font-light ml-3 mr-8">
             <li class="cursor-pointer flex items-center"><a>Aide</a><i class="material-icons tiny">arrow_drop_down</i></li>
@@ -42,6 +42,17 @@
                         <li><a href="">Formations en promo</a></li>
                     </ul>
                     <button class="bg-pink-700 text-white p-3 rounded-lg hover:bg-blue-500 transition-all">DEVENIR FORMATEUR</button>
+                </div>
+            </div>
+        </transition>
+        <transition name="transitionsearchbar">
+            <div class="searchbar absolute top-8 rounded-lg h-12 w-96 bg-white" v-if="showsearchbar">
+                <div class="w-4/5 mx-auto flex justify-around items-center" >
+                    <span class="inline-block w-1/6 text-right pr-2">
+                        <i class="material-icons">search</i>
+                    </span>
+                    <label for="recherche" class="hidden">recherche de categories</label>
+                    <input type="search" placeholder="Que voulez-vous étudier aujourd'hui?" class="outline-none w-5/6 h-12 text-sm" id="search" name="search" >
                 </div>
             </div>
         </transition>
@@ -93,7 +104,11 @@ export default {
             'Responsable Marketing',
             'Digital'
         ],
+        showsearchbar = ref(false),
         showpanel = ref(false),
+        showsearchbarfunction = function() {
+            showsearchbar.value = !showsearchbar.value
+        },
         showformationpanel = function(e) {
             showpanel.value = !showpanel.value
             console.log(e.currentTarget)
@@ -104,12 +119,25 @@ export default {
             popularLesson,
             proCourse,
             showpanel,
-            showformationpanel
+            showsearchbar,
+            showformationpanel,
+            showsearchbarfunction
         }
     },
 }
 </script>
 <style scoped>
+
+    .searchbar {
+        left: 140px
+    }
+
+    .transitionsearchbar-enter-from, .transitionsearchbar-leave-to {
+        opacity: 0
+    }
+    .transitionsearchbar-enter-active, .transitionsearchbar-leave-active {
+        transition: opacity .7s ease
+    }
 
     .transitionpanel-enter-from, .transitionpanel-leave-to {
         opacity: 0;
