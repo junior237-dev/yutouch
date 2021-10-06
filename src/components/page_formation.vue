@@ -184,6 +184,31 @@
         </div>
     </div>
 
+    <div class="videos_container">
+        <span class="title">Autres formations qui pourraient vous intéresser</span>
+        <div class="videos">
+            <div class="video" v-for="i in 6" :key="i">
+                <div class="video_img">
+                    <video src="../assets/photoshop.mp4" controls></video>
+                    <img src="../assets/cover2.jpg" alt="">
+                </div>
+                <div class="info">Les possibilités insoupçconnées des calques courbes de <br>transfert de dégradé dans photoshop CC</div>
+                <div class="autor gray"> de <span class="blue">Pascal Gauch</span> - Durée : 23m49s</div>
+                <div class="star">
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="pagination">
+                
+            </div>
+        </div>
+    </div>
+
     <Footer />
 </template>
 
@@ -198,7 +223,7 @@ export default {
     data() {
         return {
             scrollNav: false,
-            open: false
+            open: false,
         }
     },
 
@@ -797,4 +822,64 @@ $blue: #00a9f0;
         }
     }
 }
+
+.videos_container {
+        background-color: #f0f0f0;
+        padding: 50px 0 0 0;
+
+        .title {
+            display: block;
+            width: fit-content;
+            font-size: 20px;
+            margin: 0 auto 30px;
+        }
+
+        .videos {
+            width: 80%;
+            margin: auto;
+            overflow: auto;
+            white-space: nowrap;
+
+            .video {
+                width: 400px;
+                margin: 0 25px 0 0;
+                display: inline-block;
+
+                .video_img {
+                    position: relative;
+
+                    video {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50px;
+                        position: absolute;
+                        bottom: -9px;
+                        right: 3px;
+                    }
+                }
+
+                .info {
+                    margin: 10px 0;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: rgb(73, 73, 73);
+                    line-height: 20px;
+                }
+
+                .autor {
+                    font-size: 14px;
+                    margin: 0 0 5px 0;
+                }
+
+                .star .checked {
+                    color: #ffc241;
+                }
+            }
+        }
+    }
 </style>
