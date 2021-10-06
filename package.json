@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "sass": "^1.42.1",
+    "vue": "^3.0.0",
+    "yutouch": "file:"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -21,6 +23,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "postcss": "^7.0.38",
+    "sass-loader": "^10",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.16"
   },
   "eslintConfig": {
