@@ -13,84 +13,31 @@
             </div>
         </div>
     </div>
-    <div class="container-category w-full mt-10 lg:mt-96 lg:pt-32">
-        <div class="category-title text-left w-4/5 mx-auto mb-2 md:flex md:justify-between md:mb-3">
-            <h2 class="title text-2xl text-gray-700 mb-1">Tutos les plus populaires</h2>
-            <a href="/" class="link_categories text-blue-500 text-base">voir tous les meilleurs atéliers</a>
-        </div>
-        <div class="categories-element text-left w-4/5 mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-2">
-            <div class="category-element w-full mb-2">
-                <div class="banner-category-element relative">
-                    <img src="../assets/yutouch_image.jpg" alt="" class="object-cover w-max h-auto">
-                    <img src="../assets/yutouch.jpg" alt="" class="absolute rounded-full h-16 w-16 border-4 border-white -bottom-5 right-10">
-                </div>
-                <h3 class="description-category-element w-full text-gray-800 leading-4 text-sm mt-4">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
-                <div class="author-category-element mt-1 text-sm">
-                    By <strong class="text-blue-500">name_author</strong><span class="datetime text-gray-500"> - Durée: 06h07m</span>
-                </div>
-                <div class="stars mt-1">
-                    <i class="material-icons text-base text-yellow-400" v-for="i in 5" :key="i">star</i>
-                </div>
-            </div>
-            <div class="category-element w-full mb-2">
-                <div class="banner-category-element relative">
-                    <img src="../assets/lolid.png" alt="" class="object-cover w-max h-auto">
-                    <img src="../assets/yutouch.jpg" alt="" class="absolute rounded-full h-16 w-16 border-4 border-white -bottom-5 right-10">
-                </div>
-                <h3 class="description-category-element w-full text-gray-800 leading-4 text-sm mt-4">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
-                <div class="author-category-element mt-1 text-sm">
-                    By <strong class="text-blue-500">name_author</strong><span class="datetime text-gray-500"> - Durée: 06h07m</span>
-                </div>
-                <div class="stars mt-1">
-                    <i class="material-icons text-base text-yellow-400" v-for="i in 5" :key="i">star</i>
-                </div>
-            </div>
-            <div class="category-element w-full mb-2">
-                <div class="banner-category-element relative">
-                    <img src="../assets/pennseeK.jpg" alt="" class="object-cover w-max h-auto">
-                    <img src="../assets/yutouch.jpg" alt="" class="absolute rounded-full h-16 w-16 border-4 border-white -bottom-5 right-10">
-                </div>
-                <h3 class="description-category-element w-full text-gray-800 leading-4 text-sm mt-4">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
-                <div class="author-category-element mt-1 text-sm">
-                    By <strong class="text-blue-500">name_author</strong><span class="datetime text-gray-500"> - Durée: 06h07m</span>
-                </div>
-                <div class="stars mt-1">
-                    <i class="material-icons text-base text-yellow-400" v-for="i in 5" :key="i">star</i>
-                </div>
-            </div>
-            <div class="category-element w-full mb-2">
-                <div class="banner-category-element relative">
-                    <img src="../assets/rykel.png" alt="" class="object-cover w-max h-auto">
-                    <img src="../assets/yutouch.jpg" alt="" class="absolute rounded-full h-16 w-16 border-4 border-white -bottom-5 right-10">
-                </div>
-                <h3 class="description-category-element w-full text-gray-800 leading-4 text-sm mt-4">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
-                <div class="author-category-element mt-1 text-sm">
-                    By <strong class="text-blue-500">name_author</strong><span class="datetime text-gray-500"> - Durée: 06h07m</span>
-                </div>
-                <div class="stars mt-1">
-                    <i class="material-icons text-base text-yellow-400" v-for="i in 5" :key="i">star</i>
-                </div>
-            </div>
-            <div class="category-element w-full mb-2">
-                <div class="banner-category-element relative">
-                    <img src="../assets/touch.jpg" alt="" class="object-cover w-max h-auto">
-                    <img src="../assets/yutouch.jpg" alt="" class="absolute rounded-full h-16 w-16 border-4 border-white -bottom-5 right-10">
-                </div>
-                <h3 class="description-category-element w-full text-gray-800 leading-4 text-sm mt-4">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
-                <div class="author-category-element mt-1 text-sm">
-                    By <strong class="text-blue-500">name_author</strong><span class="datetime text-gray-500"> - Durée: 06h07m</span>
-                </div>
-                <div class="stars mt-1">
-                    <i class="material-icons text-base text-yellow-400" v-for="i in 5" :key="i">star</i>
-                </div>
+
+    <container-category-origin />
+    <container-category-second v-for="i in 3" :key="i" />
+
+    <div class="banner-footer relative w-full mt-10">
+        <div class="banner2 w-full h-96 bg-cover bg-opacity-25 bg-center bg-no-repeat"></div>
+        <div class="description absolute h-96 top-0 left-0 right-0 bg-black bg-opacity-40">
+            <div class="proposition w-2/3 text-left mx-auto text-white my-8 sm:mt-10">
+                <h2 class="text-xl w-full mb-5">Proposez vos propres cours</h2>
+                <p class="text-base">Lorem ipsum quia minima tenetur alias,quia minima tenetur alias, accusamus commodi sequi odit vitae? Minima pariatur voluptatum tenetur minus porro voluptatibus at culpa.</p>
+                <button class="h-12 px-2 w-5/5 mx-auto mt-5 leaning-4 text-lg rounded-md bg-pink-700">Devenez Formateur</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import containerCategoryOrigin from "./container-category-origin.vue"
+import containerCategorySecond from "./container-category-second.vue"
 export default {
     name: 'mainVuejs',
+    components: {
+        containerCategorySecond,
+        containerCategoryOrigin
+    },
     setup() {
         
     },
@@ -99,8 +46,53 @@ export default {
 
 <style scoped>
     .banner {
-        background-image: url(../assets/yutouch_image.jpg);
+        background-image: url(../assets/banner1.jpg);
         background-color: #232428;
+    }
+
+    .banner2 {
+        background-image: url(../assets/banner2.jpg);
+        background-color: #232428;
+    }
+
+    @media screen and (max-width: 272px) {
+        .banner-footer p.text-base {
+            font-size: .85em;
+            line-height: 20px;
+        }
+
+        .banner-footer .proposition {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .banner-footer button {
+            font-size: .9em;
+            line-height: 15px;
+            height: 40px
+        }
+    }
+
+    @media screen and (min-width: 370px) {
+        .banner2 {
+            height: 300px
+        }
+        .description {
+            height: 300px
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .banner2 {
+            height: 280px;
+        }
+        .description {
+            height: 280px
+        }
+
+        p.text-base {
+            max-width: 494px
+        }
     }
 
     @media screen and (max-width: 400px) {
@@ -133,7 +125,7 @@ export default {
 
     @media screen and (min-width: 900px) {
         .banner {
-            height: 450px
+            height: 500px
         }
     }
 
