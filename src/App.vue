@@ -3,7 +3,7 @@
     <!-- <head-vuejs />
     <main-vuejs/>
     <foot-vuejs /> -->
-    <banner />
+    <Page_formation />
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 /* import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue'
 import footVuejs from './components/footer.vue' */
-import Banner from './components/banner.vue'
+import Page_formation from './components/page_formation.vue'
 
 export default {
   name: 'App',
@@ -19,7 +19,7 @@ export default {
     /* headVuejs, 
     mainVuejs, 
     footVuejs, */
-    Banner
+    Page_formation
   }
 }
 </script>
