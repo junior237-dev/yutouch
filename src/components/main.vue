@@ -1,31 +1,31 @@
 <template>
     <!-- <connexion /> -->
-    <page-formation />
+    <!-- <page-formation /> -->
     <!-- <inscription /> -->
-    <!-- <principal-banner />
+    <principal-banner />
     <container-category-origin />
     <container-category-second v-for="i in 3" :key="i" />
-    <banner-footer /> -->
+    <banner-footer />
 </template>
 
 <script>
 // import connexion from './connexion.vue'
-import pageFormation from './page_formation.vue'
+// import pageFormation from './page_formation.vue'
 // import inscription from "./inscription.vue"
-// import principalBanner from "./principal-banner.vue"
-// import containerCategoryOrigin from "./container-category-origin.vue"
-// import containerCategorySecond from "./container-category-second.vue"
-// import bannerFooter from "./banner-footer.vue"
+import principalBanner from "./principal-banner.vue"
+import containerCategoryOrigin from "./container-category-origin.vue"
+import containerCategorySecond from "./container-category-second.vue"
+import bannerFooter from "./banner-footer.vue"
 export default {
     name: 'mainVuejs',
     components: {
         // connexion
-        pageFormation,
+        // pageFormation,
         // inscription,
-        // containerCategorySecond,
-        // containerCategoryOrigin,
-        // bannerFooter,
-        // principalBanner
+        containerCategorySecond,
+        containerCategoryOrigin,
+        bannerFooter,
+        principalBanner
     },
     setup() {
         
