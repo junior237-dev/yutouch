@@ -1,200 +1,196 @@
 <template>
-    <div class="fixed_navbar" v-show="scrollNav">
-        <ul class="navbar_info">
-            <li class="nb_telechargement">106 <span class="text">Télécgargement</span></li> 
-            <li class="note">4.8/5 <span class="text">Note</span></li>
-            <li class="duree">1h02m <span class="text">Durée</span></li>
-            <li class="fav"><i class="fas fa-heart"></i> <span class="text">favoris</span></li>
-        </ul>
-
-        <div class="btn_prix">
-            <button>ajouter au panier</button>
-            <span class="prix">9,00 <i class="fas fa-euro-sign"></i></span>
-        </div>
-    </div>
-
-    <div class="banner">
-        <div class="video_container">
-            <div class="video">
-                <video src="../assets/photoshop.mp4" controls></video>
-            </div>
-            <span class="favori"><i class="fas fa-heart" style="color:rgb(255, 136, 0)"></i> ajouter ce cours aux favoris</span>
-        </div>
-
-        <div class="infos">
-            <h1>Tuto Le Noir&Blanc sublimé et les LUTs grâce aux xalques de réglages dans Photoshop CC <span class="text-small"> avec Photoshop</span></h1>
-            <button>ajouter au panier</button> <span class="prix">9,00 <i class="fas fa-euro-sign"></i></span>
-            <ul>
-                <li><i class="fas fa-circle"></i> Une formation vidéo de 1h02m</li>
-                <li><i class="fas fa-circle"></i> Téléchargement immédiat et visionnage illimité à vie</li>
-                <li><i class="fas fa-circle"></i> Satisfait ou remboursé</li>
-                <li><i class="fas fa-circle"></i> Fichiers sources inclus</li>
-                <li><i class="fas fa-circle"></i> Découvrez pourquoi vous former avec <a href="#">Yutouch.com</a></li>
+    <div class="page-formation w-full mx-auto">
+        <div class="fixed_navbar" v-show="scrollNav">
+            <ul class="navbar_info">
+                <li class="nb_telechargement">106 <span class="text">Télécgargement</span></li> 
+                <li class="note">4.8/5 <span class="text">Note</span></li>
+                <li class="duree">1h02m <span class="text">Durée</span></li>
+                <li class="fav"><i class="fas fa-heart"></i> <span class="text">favoris</span></li>
             </ul>
+
+            <div class="btn_prix">
+                <button>ajouter au panier</button>
+                <span class="prix">9,00 <i class="fas fa-euro-sign"></i></span>
+            </div>
         </div>
-    </div>
 
-    <div class="body">
-        <div class="sidebar">
-            <div class="duree_note">
-                <div class="duree">Durée <span class="heure">1h02m</span></div>
-                <div class="note">Note 
-                    <div class="star">
-                        <i class="fas fa-star checked"></i>
-                        <i class="fas fa-star checked"></i>
-                        <i class="fas fa-star checked"></i>
-                        <i class="fas fa-star checked"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+        <div class="banner">
+            <div class="video_container">
+                <div class="video">
+                    <video src="../assets/photoshop.mp4" controls></video>
                 </div>
+                <span class="favori"><i class="fas fa-heart" style="color:rgb(255, 136, 0)"></i> ajouter ce cours aux favoris</span>
             </div>
 
-            <div class="logiciel_version">
-                <span class="title">Logiciel & version</span>
-                <span class="software">Photoshop CC</span>
-                <span class="version">compatible avec ma version ?</span>
-            </div>
-
-            <div class="niveau">
-                <span class="niveau_tuto">Niveau de ce tuto</span>
-                <span class="intermediare">intermédiare</span>
-            </div>
-
-            <div class="partager">
-                <span class="partager_cours">Partager ce cours</span>
-                <div class="like">
-                    <button class="nb">0</button>
-                    <button class="like_btn">LIKE</button>
-                </div>
-            </div>
-
-            <div class="autres_infos">
-                <span class="autres">Autres infos</span>
+            <div class="infos">
+                <h1>Tuto Le Noir&Blanc sublimé et les LUTs grâce aux xalques de réglages dans Photoshop CC <span class="text-small"> avec Photoshop</span></h1>
+                <button>ajouter au panier</button> <span class="prix">9,00 <i class="fas fa-euro-sign"></i></span>
                 <ul>
-                    <li>Téléchargement illimité</li>
-                    <li>Publié le 31/08/2020</li>
-                    <li>Téléchargé 122 fois</li>
-                    <li>Fichiers sources : fournis</li>
-                    <li>Catégorie : <span>Calques</span></li>
-                    <li>Langue : français</li>
-                    <li>QCM : oui / non</li>
+                    <li><i class="fas fa-circle"></i> Une formation vidéo de 1h02m</li>
+                    <li><i class="fas fa-circle"></i> Téléchargement immédiat et visionnage illimité à vie</li>
+                    <li><i class="fas fa-circle"></i> Satisfait ou remboursé</li>
+                    <li><i class="fas fa-circle"></i> Fichiers sources inclus</li>
+                    <li><i class="fas fa-circle"></i> Découvrez pourquoi vous former avec <a href="#">Yutouch.com</a></li>
                 </ul>
             </div>
-
-            <div class="appareil">
-                <span class="compatibilite">Compatibilité</span>
-                <div class="device">
-                    <i class="fas fa-laptop" style="font-size: 40px"></i>
-                    <i class="fas fa-tablet-alt" style="font-size: 38px"></i>
-                    <i class="fas fa-mobile-alt" style="font-size: 36px"></i>
-                </div>
-            </div>
         </div>
 
-        <div class="main_details">
-            <p class="title">Le Noir&Blanc Sublimé et les LUTs grâce aux calques de reglages</p>
+        <div class="body">
+            <div class="sidebar">
+                <div class="duree_note">
+                    <div class="duree">Durée <span class="heure">1h02m</span></div>
+                    <div class="note">Note 
+                        <div class="star">
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
 
-            <p>Bonjour je suis <a>Pascal Gauch</a> bienvenue dans ce nouveau tutoriel sur le Noir&Blanc sublimé et les LUTs grâce aux calques de réglages</p>
-        
-            <p>Cette formation fait partie d'une <a>formation complete sur les calques de réglage</a></p>
+                <div class="logiciel_version">
+                    <span class="title">Logiciel & version</span>
+                    <span class="software">Photoshop CC</span>
+                    <span class="version">compatible avec ma version ?</span>
+                </div>
 
-            <span class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas doloribus eius harum natus praesentium laborum dicta deleniti commodi consequatur? Dolore ex id iure illo sit itaque eius aliquid nobis labore voluptatem. Earum, veritatis?</span>
-        
-            <ul>
-                <li><i class="fas fa-circle"></i> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam id non facilis aliquam ipsam eaque voluptatum fuga velit asperiores? Quasi accusantium odit labore, nesciunt repudiandae cum minima incidunt animi saepe ducimus, explicabo neque! Cumque quos ad, totam molestias nemo dolorum fuga minima.</li>
-                <li><i class="fas fa-circle"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quia aperiam iste reiciendis architecto voluptatem soluta, quos facere esse omnis deleniti! Corporis adipisci veritatis libero hic.</li>
-                <li><i class="fas fa-circle"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus at velit accusantium ut! Illo, aperiam, magni error pariatur excepturi est officiis minus obcaecati iste voluptatum exercitationem unde! Dignissimos, assumenda.</li>
-            </ul>
+                <div class="niveau">
+                    <span class="niveau_tuto">Niveau de ce tuto</span>
+                    <span class="intermediare">intermédiare</span>
+                </div>
 
-            <div class="tm">
-                <h2>Table des matières de cette formation Photoshop <span class="gray">(durée : 1h02m)</span></h2>
+                <div class="partager">
+                    <span class="partager_cours">Partager ce cours</span>
+                    <div class="like">
+                        <button class="nb">0</button>
+                        <button class="like_btn">LIKE</button>
+                    </div>
+                </div>
 
-                <div class="chapters">
-                    <div class="chapter"> 
+                <div class="autres_infos">
+                    <span class="autres">Autres infos</span>
+                    <ul>
+                        <li>Téléchargement illimité</li>
+                        <li>Publié le 31/08/2020</li>
+                        <li>Téléchargé 122 fois</li>
+                        <li>Fichiers sources : fournis</li>
+                        <li>Catégorie : <span>Calques</span></li>
+                        <li>Langue : français</li>
+                        <li>QCM : oui / non</li>
+                    </ul>
+                </div>
+
+                <div class="appareil">
+                    <span class="compatibilite">Compatibilité</span>
+                    <div class="device">
+                        <i class="fas fa-laptop" style="font-size: 40px"></i>
+                        <i class="fas fa-tablet-alt" style="font-size: 38px"></i>
+                        <i class="fas fa-mobile-alt" style="font-size: 36px"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main_details">
+                <p class="title">Le Noir&Blanc Sublimé et les LUTs grâce aux calques de reglages</p>
+
+                <p>Bonjour je suis <a>Pascal Gauch</a> bienvenue dans ce nouveau tutoriel sur le Noir&Blanc sublimé et les LUTs grâce aux calques de réglages</p>
+            
+                <p>Cette formation fait partie d'une <a>formation complete sur les calques de réglage</a></p>
+
+                <span class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas doloribus eius harum natus praesentium laborum dicta deleniti commodi consequatur? Dolore ex id iure illo sit itaque eius aliquid nobis labore voluptatem. Earum, veritatis?</span>
+            
+                <ul>
+                    <li><i class="fas fa-circle"></i> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam id non facilis aliquam ipsam eaque voluptatum fuga velit asperiores? Quasi accusantium odit labore, nesciunt repudiandae cum minima incidunt animi saepe ducimus, explicabo neque! Cumque quos ad, totam molestias nemo dolorum fuga minima.</li>
+                    <li><i class="fas fa-circle"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quia aperiam iste reiciendis architecto voluptatem soluta, quos facere esse omnis deleniti! Corporis adipisci veritatis libero hic.</li>
+                    <li><i class="fas fa-circle"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus at velit accusantium ut! Illo, aperiam, magni error pariatur excepturi est officiis minus obcaecati iste voluptatum exercitationem unde! Dignissimos, assumenda.</li>
+                </ul>
+
+                <div class="tm">
+                    <h2>Table des matières de cette formation Photoshop <span class="gray">(durée : 1h02m)</span></h2>
+
+                    <div class="chapters">
+                        <div class="chapter"> 
+                            <div class="title" @click="toggleDropdown">
+                                <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Introduction</span>
+                            </div>
+                            <div class="cache" ref="cache">
+                                <i class="fas fa-play-circle"></i> <span class="topic">Introduction les calques de réglages Noir&Blanc et sur les LUTs <sup>gratuit</sup><span class="dot">...............................</span></span>00:01:19
+                            </div>
+                        </div>
+
+                        <div class="chapter"> 
+                            <div class="title" @click="toggleDropdown">
+                                <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Le Noir&Blanc</span>
+                            </div>
+                            <div class="cache">
+                                <span class="topic_normal">0501 Le Noir&Blanc Sublimé <span class="dot">.................................................................................................</span> 00:12:28</span>
+                                <span class="topic_normal">0502 Noir&Blanc et Virage Partiel <span class="dot">........................................................................................</span> 00:09:06</span>
+                                <span class="topic_normal">0503 Rétablir des couleurs dans du Noir&Blanc <span class="dot">..............................................................</span> 00:08:48</span>
+                                <span class="topic_normal">0504 Blanchiment et contraste : effet bleach bypass <span class="dot">......................................................</span> 00:05:46</span>
+                                <span class="topic_normal">0505 Noir&Blanc et LUTs <span class="dot">.........................................................................................................</span> 00:08:14</span>
+                            </div>
+                        </div>
+
+                        <div class="chapter"> 
+                            <div class="title" @click="toggleDropdown">
+                                <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Les LUTs et la correspondance de couleur</span>
+                            </div>
+                        </div>
+
+                        <div class="chapter"> 
+                            <div class="title" @click="toggleDropdown">
+                            <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Conclusion de chapitre</span>
+                            </div>
+                        </div>
+
+                        <button>Fichiers sources <i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+
+                <div class="formateur">
+                    <img src="../assets/cover2.jpg" alt="">
+                    <div class="info">
+                        <h1>Formateur : <span class="name">Pascal Gauch</span></h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, officiis repellat quos nemo et maiores. Voir les autres <span class="formation">formations de Pascal Gauch</span></p>
+                    </div>
+                </div>
+
+                <div class="questions">
+                    <div class="titre">QUESTIONS SUR LE TUTO</div>
+
+                    <div class="question">
                         <div class="title" @click="toggleDropdown">
-                            <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Introduction</span>
+                            <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Avec quelle version de logiciel ce tuto est-il compatible ?</span>
                         </div>
                         <div class="cache" ref="cache">
-                            <i class="fas fa-play-circle"></i> <span class="topic">Introduction les calques de réglages Noir&Blanc et sur les LUTs <sup>gratuit</sup><span class="dot">...............................</span></span>00:01:19
+                            <span class="response">Photoshop CC</span>
+                            <span class="gray">La réponse vous a t-elle été utile ? <span class="blue">OUI</span> - <span class="blue">NON</span> </span>
                         </div>
                     </div>
 
-                    <div class="chapter"> 
+                    <div class="question">
                         <div class="title" @click="toggleDropdown">
-                            <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Le Noir&Blanc</span>
+                            <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Quel est le niveau requis pour suivre ce tuto ?</span>
                         </div>
-                        <div class="cache">
-                            <span class="topic_normal">0501 Le Noir&Blanc Sublimé <span class="dot">.................................................................................................</span> 00:12:28</span>
-                            <span class="topic_normal">0502 Noir&Blanc et Virage Partiel <span class="dot">........................................................................................</span> 00:09:06</span>
-                            <span class="topic_normal">0503 Rétablir des couleurs dans du Noir&Blanc <span class="dot">..............................................................</span> 00:08:48</span>
-                            <span class="topic_normal">0504 Blanchiment et contraste : effet bleach bypass <span class="dot">......................................................</span> 00:05:46</span>
-                            <span class="topic_normal">0505 Noir&Blanc et LUTs <span class="dot">.........................................................................................................</span> 00:08:14</span>
+                        <div class="cache" ref="cache">
+                            <span class="response">intermédiare</span>
+                            <span class="gray">La réponse vous a t-elle été utile ? <span class="blue">OUI</span> - <span class="blue">NON</span> </span>
                         </div>
                     </div>
 
-                    <div class="chapter"> 
-                        <div class="title" @click="toggleDropdown">
-                            <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Les LUTs et la correspondance de couleur</span>
-                        </div>
-                    </div>
-
-                    <div class="chapter"> 
-                        <div class="title" @click="toggleDropdown">
-                        <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Conclusion de chapitre</span>
-                        </div>
-                    </div>
-
-                    <button>Fichiers sources <i class="fas fa-download"></i></button>
+                    <button>poser une question au formateur</button>
                 </div>
-            </div>
-
-            <div class="formateur">
-                <img src="../assets/cover2.jpg" alt="">
-                <div class="info">
-                    <h1>Formateur : <span class="name">Pascal Gauch</span></h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, officiis repellat quos nemo et maiores. Voir les autres <span class="formation">formations de Pascal Gauch</span></p>
-                </div>
-            </div>
-
-            <div class="questions">
-                <div class="titre">QUESTIONS SUR LE TUTO</div>
-
-                <div class="question">
-                    <div class="title" @click="toggleDropdown">
-                        <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Avec quelle version de logiciel ce tuto est-il compatible ?</span>
-                    </div>
-                    <div class="cache" ref="cache">
-                        <span class="response">Photoshop CC</span>
-                        <span class="gray">La réponse vous a t-elle été utile ? <span class="blue">OUI</span> - <span class="blue">NON</span> </span>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <div class="title" @click="toggleDropdown">
-                        <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Quel est le niveau requis pour suivre ce tuto ?</span>
-                    </div>
-                    <div class="cache" ref="cache">
-                        <span class="response">intermédiare</span>
-                        <span class="gray">La réponse vous a t-elle été utile ? <span class="blue">OUI</span> - <span class="blue">NON</span> </span>
-                    </div>
-                </div>
-
-                <button>poser une question au formateur</button>
             </div>
         </div>
     </div>
-
-    <Footer />
 </template>
 
 <script>
-import Footer from './footer.vue';
 
 export default {
     name: 'page_formation',
-
-    components: { Footer },
-
     data() {
         return {
             scrollNav: false,
