@@ -3,7 +3,7 @@
         <i class="material-icons text-white text-4xl font-bold" @click="changeMenuForm">dehaze</i>
     </div>
     <transition name="showmenuicon">
-        <div class="menu w-full h-80 overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
+        <div class="menu w-full h-96 overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
             <div class="searchbar w-5/6 h-12 bg-white mx-auto rounded-md">
                 <form action="" method="">
                     <div class="w-4/5 mx-auto flex items-center py-2" >
@@ -15,12 +15,32 @@
                     </div>
                 </form>
                 <ul class="items-menu list-none text-left text-base text-white mt-5">
-                    <li id="formations relative">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
-                    <li id="parcours_pro">Parcours Pro</li>
-                    <li id="promos">Promos</li>
-                    <li id="aide">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
-                    <li id="connexion">Connexion</li>
-                    <li id="créer un compte">Créer un Compte</li>
+                    <li id="formations" class="p-item relative">Formations <i class="material-icons text-base" @click="showmenuformationfunction">arrow_drop_down</i></li>
+                    <transition name="menuformation">
+                        <div class="h-60 w-5/6 mx-auto bg-gray-600 overflow-scroll"  v-if="showmenuformation">
+                            <div class="thematic w-4/5 mx-auto">
+                                <h2 class="text-sm font-semibold">THEMATIQUES</h2>
+                                <ul class="thematic w-1/2 ml-8">
+                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in themElements" :key="index">{{item}}</li>
+                                </ul>
+
+                                <h2 class="text-sm font-semibold mt-8">COURS POPULAIRES</h2>
+                                <ul class="popularLesson w-1/2 ml-8">
+                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in popularLesson" :key="index">{{item}}</li>
+                                </ul>
+
+                                <h2 class="text-sm font-semibold mt-8">PARCOURS PRO</h2>
+                                <ul class="proCourse w-1/2 ml-8">
+                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in proCourse" :key="index">{{item}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </transition>
+                    <li id="parcours_pro" class="p-item">Parcours Pro</li>
+                    <li id="promos" class="p-item">Promos</li>
+                    <li id="aide" class="p-item">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
+                    <li id="connexion" class="p-item">Connexion</li>
+                    <li id="créer_un_compte" class="p-item">Créer un Compte</li>
                 </ul>
             </div>
         </div>
@@ -32,7 +52,50 @@ import {ref} from 'vue'
 export default {
     name: "menu-small-media",
     setup() {
-        let showmenu = ref(false)
+        let themElements = [
+            'Photographie & retouche',
+            '3D',
+            'Graphisme',
+            'Web',
+            'Vidéo',
+            'Programmation',
+            'Bureautique',
+            'audio et MAO',
+            'Système d\'exploitation',
+            'E-commerce & E-marketing',
+            'Serveur & Administration',
+            'Droit',
+            'Dessin',
+            'Domotique & Objets',
+            'Business',
+            'Game Design'
+        ],
+        popularLesson = [
+            'Photoshop',
+            'Illustrator',
+            'after Effects',
+            'Premiere',
+            'Excel',
+            'Figma',
+            'Indesign',
+            'wordpress'
+        ],
+        proCourse = [
+            'Motion Designer',
+            'Développeur Front End',
+            'Développeur Back End',
+            'Photographe',
+            'Designer Graphique',
+            'Infographiste 3D Cinéma 4D',
+            'Graphiste Photoshop',
+            'Responsable Marketing',
+            'Digital'
+        ]
+        let showmenu = ref(false),
+        showmenuformation = ref(false),
+        showmenuformationfunction = function() {
+            showmenuformation.value = !showmenuformation.value
+        }
         let changeMenuForm = function(e) {
             if(e.target.innerHTML === "dehaze") {
                 e.target.innerHTML = "close"
@@ -45,19 +108,32 @@ export default {
             console.log(showmenu.value)
         }
         return {
+            showmenuformation,
+            popularLesson,
+            proCourse,
+            themElements,
             showmenu,
-            changeMenuForm
+            changeMenuForm,
+            showmenuformationfunction
         }
     },
 }
 </script>
 <style scoped>
-    ul.items-menu li{
+    ul.items-menu li.p-item{
         line-height: 50px;
         border-bottom: solid gray 1px;
         margin: 7px 0;
         font-weight: bold;
         
+    }
+
+    .menuformation-enter-from, .menuformation-leave-to {
+        opacity: 0;
+        height: -50%
+    }
+    .menuformation-enter-active, .menuformation-leave-active {
+        transition: opacity .5s ease, height .5s ease
     }
     
 
