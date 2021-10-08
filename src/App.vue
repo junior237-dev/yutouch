@@ -2,24 +2,27 @@
   <div id="appvue">
     <!-- <head-vuejs />
     <main-vuejs/>
-    <foot-vuejs /> -->
-    <Page_formation />
+    <foot-vuejs /> 
+    <Page_formation />-->
+    <Page_categorie />
   </div>
 </template>
 
 <script>
+import Page_categorie from './components/page_categorie.vue'
 /* import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue'
-import footVuejs from './components/footer.vue' */
-import Page_formation from './components/page_formation.vue'
+import footVuejs from './components/footer.vue' 
+import Page_formation from './components/page_formation.vue'*/
 
 export default {
   name: 'App',
   components: {
     /* headVuejs, 
     mainVuejs, 
-    footVuejs, */
-    Page_formation
+    footVuejs, 
+    Page_formation,*/
+    Page_categorie
   }
 }
 </script>

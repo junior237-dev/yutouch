@@ -70,7 +70,7 @@ export default {
         toggleDropdown() {
             // const selected = this.$refs.selected;
             const optionsContainer = this.$refs.options_container;
-            const optionsList = this.$refs.options_container.children;
+            // const optionsList = this.$refs.options_container.children;
 
             optionsContainer.classList.toggle('active')
 
@@ -84,9 +84,9 @@ export default {
                 list.push(key);
             }); */
 
-            optionsList.filter( function (value, key) {
+            /* optionsList.filter( function (value, key) {
                 console.log(key, value)
-            })
+            }) */
 
             /* optionsList.forEach( o => {
                 o.addEventListener('click', () => {
