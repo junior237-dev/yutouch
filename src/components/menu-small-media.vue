@@ -3,7 +3,7 @@
         <i class="material-icons text-white text-4xl font-bold" @click="changeMenuForm">dehaze</i>
     </div>
     <transition name="showmenuicon">
-        <div class="menu w-full h-96 overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
+        <div class="menu w-full overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
             <div class="searchbar w-5/6 h-12 bg-white mx-auto rounded-md">
                 <form action="" method="">
                     <div class="w-4/5 mx-auto flex items-center py-2" >
@@ -120,6 +120,10 @@ export default {
 }
 </script>
 <style scoped>
+
+    div.menu {
+        height: 460px;
+    }
     ul.items-menu li.p-item{
         line-height: 50px;
         border-bottom: solid gray 1px;
@@ -130,10 +134,10 @@ export default {
 
     .menuformation-enter-from, .menuformation-leave-to {
         opacity: 0;
-        height: -50%
+        transform: translateY(-70px)
     }
     .menuformation-enter-active, .menuformation-leave-active {
-        transition: opacity .5s ease, height .5s ease
+        transition: opacity .5s ease, transform .5s ease
     }
     
 
