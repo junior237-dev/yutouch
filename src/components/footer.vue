@@ -241,7 +241,7 @@ export default {
         display: flex;
         justify-content: space-between;
         width: 85%;
-        margin: 0 auto;
+        margin: 0 auto 3px;
 
         .copyright {
             font-size: 11px;

@@ -18,7 +18,7 @@
             <li class="cursor-pointer"><a>Créer Compte</a></li>
         </ul>
         <transition name="transitionsearchbar">
-            <searchbar v-if="showsearchbar" class="text-black fixed top-20 left-0 right-0 mx-auto"/>
+            <searchbar v-if="showsearchbar" class="text-black"/>
         </transition>
     </div>
 </template>

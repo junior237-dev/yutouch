@@ -14,8 +14,8 @@
                         <input type="search" placeholder="Rechercher" class="text-center text-lg outline-none h-7 w-5/6 mb-2" id="search" name="search" >
                     </div>
                 </form>
-                <ul class="items-menu list-none text-left text-lg text-white mt-5">
-                    <li id="formations">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
+                <ul class="items-menu list-none text-left text-base text-white mt-5">
+                    <li id="formations relative">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
                     <li id="parcours_pro">Parcours Pro</li>
                     <li id="promos">Promos</li>
                     <li id="aide">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
