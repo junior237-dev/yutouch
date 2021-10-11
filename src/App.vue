@@ -1,22 +1,22 @@
 <template>
   <div id="appvue">
     <head-vuejs />
-    <main-vuejs/>
-    <foot-vuejs />
+    <main-vuejs />
+    <foot-vuejs /> 
   </div>
 </template>
 
 <script>
 import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue' 
-import footVuejs from './components/footer.vue'
+import footVuejs from './components/footerVuejs.vue'
 
 export default {
   name: 'App',
   components: {
     headVuejs,
     mainVuejs, 
-    footVuejs
+    footVuejs, 
   }
 }
 </script>

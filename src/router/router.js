@@ -16,7 +16,7 @@ const routes = [
     },
     {
         name: "page des formations",
-        path: "/page_formation/:id",
+        path: "/page_formation",
         component: pageFormation
     },
     {

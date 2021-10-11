@@ -182,6 +182,35 @@
             </div>
         </div>
     </div>
+
+    <div class="videos_container">
+        <span class="title">Autres formations qui pourraient vous intéresser</span>
+        <div class="videos">
+            <div class="video" v-for="i in 6" :key="i">
+                <div class="video_img">
+                    <video src="../assets/photoshop.mp4" controls></video>
+                    <img src="../assets/cover2.jpg" alt="">
+                </div>
+                <div class="info">Les possibilités insoupçconnées des calques courbes de transfert de dégradé dans photoshop CC</div>
+                <div class="autor gray"> de <span class="blue">Pascal Gauch</span> - Durée : 23m49s</div>
+                <div class="star">
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star checked"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="pagination">
+            <i class="fas fa-circle active"></i>
+            <i class="fas fa-circle"></i>
+            <i class="fas fa-circle"></i>
+        </div> -->
+    </div>
+
+    <Footer />
 </template>
 
 <script>
@@ -191,7 +220,7 @@ export default {
     data() {
         return {
             scrollNav: false,
-            open: false
+            open: false,
         }
     },
 
@@ -219,8 +248,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 $gray: #b4bac0;
 $blue: #00a9f0;
+
 .gray {
     color: $gray;
 }
@@ -241,6 +272,9 @@ $blue: #00a9f0;
     width: 100%;
     background-color: #3f4348;
     position: fixed;
+    z-index: 1029;
+    top: 0;
+    left: 0;
 
     .navbar_info {
         display: flex;
@@ -329,7 +363,7 @@ $blue: #00a9f0;
 
             video {
                 object-fit: cover;
-                max-height: 40vh;
+                max-height: 300px;
                 width: 100%; 
 
                 @media screen and (max-height: 717px) {
@@ -387,7 +421,9 @@ $blue: #00a9f0;
 
         .video_container {
             width: 100%;
-            margin-bottom: 15px;
+            margin: 15px 0;
+
+            order: 1;
         }
 
         .infos {
@@ -434,6 +470,12 @@ $blue: #00a9f0;
     justify-content: space-around;
     width: 85%;
     margin: auto;
+
+    @media screen and (max-width: 927px) {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .body .sidebar {
@@ -579,6 +621,16 @@ $blue: #00a9f0;
         .device i {
             margin-left: 12px;
             color: #9da6ac;
+        }
+    }
+
+    @media screen and (max-width: 927px) {
+        padding: 30px 0 0 4%;
+
+        order: 1;
+
+        .appareil, .autres_infos, .partager, .niveau, .logiciel_version, .duree_note {
+            width: 95%;
         }
     }
 }
@@ -787,6 +839,103 @@ $blue: #00a9f0;
             border-radius: 4px;
             color: white;
             margin: 10px 0 20px 0;
+        }
+    }
+
+    @media screen and (max-width: 927px) {
+        width: 97%;
+    }
+
+    @media screen and (max-width: 619px) {
+        .formateur {
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+                margin: 0 0 20px 0;
+            }
+        }
+    }
+}
+
+.videos_container {
+    background-color: #f0f0f0;
+    padding: 50px 0 30px 0;
+
+    .title {
+        display: block;
+        width: fit-content;
+        font-size: 20px;
+        margin: 0 auto 30px;
+    }
+
+    .videos {
+        max-width: 80%;
+        margin: auto;
+        overflow-x: auto;
+        display: flex;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .video {
+            min-width: 363px;
+            margin: 0 25px 0 0;
+            text-align: left;
+
+            .video_img {
+                position: relative;
+                z-index: 100;
+
+                video {
+                    width: 100%;
+                    height: 180px;
+                    object-fit: cover;
+                }
+
+                img {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50px;
+                    position: absolute;
+                    bottom: -9px;
+                    right: 3px;
+                }
+            }
+
+            .info {
+                margin: 10px 0;
+                font-size: 14px;
+                font-weight: bold;
+                color: rgb(73, 73, 73);
+                line-height: 20px;
+            }
+
+            .autor {
+                font-size: 14px;
+                margin: 0 0 5px 0;
+            }
+
+            .star .checked {
+                color: #ffc241;
+            }
+        }
+    }
+
+    .pagination {
+        font-size: 14px;
+        width: fit-content;
+        margin: auto;
+
+        i {
+            color: $gray;
+            margin: 30px 10px 30px 0;
+            cursor: pointer;
+        }
+
+        i.active {
+            color: $blue;
         }
     }
 }
