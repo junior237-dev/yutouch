@@ -1,6 +1,4 @@
 <template>
-  <!-- <Header /> -->
-
   <div class="page_categorie">
     <div class="location small">
       <span>Vous êtes ici : </span>
@@ -51,17 +49,17 @@
         <div class="videos">
           <div class="video" v-for="i in 12" :key="i">
               <div class="video_img">
-                  <video src="../assets/photoshop.mp4" controls></video>
-                  <img src="../assets/cover2.jpg" alt="">
+                <video src="../assets/photoshop.mp4" controls></video>
+                <img src="../assets/cover2.jpg" alt="">
               </div>
               <div class="info">Les possibilités insoupçconnées des calques courbes de transfert de dégradé dans photoshop CC</div>
               <div class="autor gray"> de <span class="blue">Pascal Gauch</span> - Durée : 23m49s</div>
               <div class="star">
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star"></i>
               </div>
           </div>
         </div>
@@ -75,34 +73,31 @@
 </template>
 
 <script>
-// import Header from './header.vue'
 export default {
-  name: 'page_categorie',
-
-  data() {
+name: 'page_categorie',
+setup() {
+let logiciels= [
+      'WordPress',
+      'Jomia',
+      'Dreamweaver',
+      'Google',
+      'Cloud',
+      'Elementor',
+      'Internet',
+      'WIX',
+      'Drupal',
+      'Contribute',
+      'Dotclear',
+      'IWeb',
+      'Magneto',
+      'iWeb',
+      'Spip',
+      'Viadeo'
+    ]
     return {
-      logiciels: [
-        'WordPress',
-        'Jomia',
-        'Dreamweaver',
-        'Google',
-        'Cloud',
-        'Elementor',
-        'Internet',
-        'WIX',
-        'Drupal',
-        'Contribute',
-        'Dotclear',
-        'IWeb',
-        'Magneto',
-        'iWeb',
-        'Spip',
-        'Viadeo'
-      ]
+      logiciels
     }
   }
-
-  // components: { Header },
 }
 </script>
 
@@ -280,12 +275,12 @@ span {
           }
 
           .autor {
-              font-size: 14px;
-              margin: 0 0 5px 0;
+            font-size: 14px;
+            margin: 0 0 5px 0;
           }
 
           .star .checked {
-              color: #ffc241;
+            color: #ffc241;
           }
         }
       }
