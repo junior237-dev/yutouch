@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footerapp">
       <div class="main_footer">
           <ul class="tuto">
               <li class="title">YuTouch.com</li>
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
+.footerapp {
     background-color: #1b1d1f;
     color: #afccda;
     padding: 35px 0 0 0;

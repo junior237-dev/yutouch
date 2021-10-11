@@ -3,11 +3,11 @@
         <div class="navbar w-full h-full py-4 relative lg:flex lg:justify-between lg:mx-auto lg:w-5/6">
             <div class="small_menu_and_logo w-auto float-left ml-3 lg:float-none">
                 <menu-small-media v-if="true" />
-                <a href="/" class="logo inline-block"><img src="../assets/yutouch.jpg" alt="logo" class="object-cover h-14 w-14 rounded-full"></a>
+                <router-link to="/" class="logo inline-block"><img src="../assets/yutouch.jpg" alt="logo" class="object-cover h-14 w-14 rounded-full"></router-link>
             </div>
             <menu-big-media />
             <a href="" class="basket block float-right mr-3 my-4 relative lg:float-none">
-                <i class="material-icons text-white font-bold text-3xl inline-block absolute  right-10">shopping_cart</i>
+                <i class="material-icons text-white font-bold text-3xl inline-block absolute right-10">shopping_cart</i>
                 <span class="inline-block h-7 w-7 text-black bg-white text-lg text-center rounded-full absolute top-1 right-3">0</span>
             </a>
         </div>

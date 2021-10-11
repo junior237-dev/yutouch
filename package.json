@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "klona": "^2.0.4",
+    "sass": "^1.42.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.11",
     "yutouch": "file:"
@@ -23,6 +25,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "postcss": "^7.0.38",
+    "sass-loader": "^10",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.16"
   },
   "eslintConfig": {

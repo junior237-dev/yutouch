@@ -1,6 +1,6 @@
 <template>
     <div class="menu-icone inline-block h-auto mr-3 lg:hidden">
-        <i class="material-icons text-white text-4xl font-bold" @click="changeMenuForm">dehaze</i>
+        <i class="material-icons text-white text-4xl font-bold cursor-pointer" @click="changeMenuForm">dehaze</i>
     </div>
     <transition name="showmenuicon">
         <div class="menu w-full overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
@@ -15,9 +15,8 @@
                     </div>
                 </form>
                 <ul class="items-menu list-none text-left text-base text-white mt-5">
-                    <li id="formations" class="p-item relative">Formations <i class="material-icons text-base" @click="showmenuformationfunction">arrow_drop_down</i></li>
-                    <transition name="menuformation">
-                        <div class="h-60 w-5/6 mx-auto bg-gray-600 overflow-scroll"  v-if="showmenuformation">
+                    <li id="formations" class="p-item relative cursor-pointer" @click="showmenuformationfunction">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
+                        <div class="h-60 w-5/6 mx-auto overflow-y-scroll"  v-if="showmenuformation">
                             <div class="thematic w-4/5 mx-auto">
                                 <h2 class="text-sm font-semibold">THEMATIQUES</h2>
                                 <ul class="thematic w-1/2 ml-8">
@@ -35,12 +34,11 @@
                                 </ul>
                             </div>
                         </div>
-                    </transition>
-                    <li id="parcours_pro" class="p-item">Parcours Pro</li>
-                    <li id="promos" class="p-item">Promos</li>
-                    <li id="aide" class="p-item">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
-                    <li id="connexion" class="p-item">Connexion</li>
-                    <li id="créer_un_compte" class="p-item">Créer un Compte</li>
+                    <li id="parcours_pro" class="p-item cursor-pointer">Parcours Pro</li>
+                    <li id="promos" class="p-item cursor-pointer">Promos</li>
+                    <li id="aide" class="p-item cursor-pointer">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
+                    <li id="connexion" class="p-item cursor-pointer">Connexion</li>
+                    <li id="créer_un_compte" class="p-item cursor-pointer">Créer un Compte</li>
                 </ul>
             </div>
         </div>
@@ -130,14 +128,6 @@ export default {
         margin: 7px 0;
         font-weight: bold;
         
-    }
-
-    .menuformation-enter-from, .menuformation-leave-to {
-        opacity: 0;
-        transform: translateY(-70px)
-    }
-    .menuformation-enter-active, .menuformation-leave-active {
-        transition: opacity .5s ease, transform .5s ease
     }
     
 

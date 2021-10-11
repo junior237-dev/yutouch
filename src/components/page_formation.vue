@@ -2,7 +2,7 @@
     <div class="page-formation w-full mx-auto">
         <div class="fixed_navbar" v-show="scrollNav">
             <ul class="navbar_info">
-                <li class="nb_telechargement">106 <span class="text">Télécgargement</span></li> 
+                <li class="nb_telechargement">106 <span class="text">Téléchargements</span></li> 
                 <li class="note">4.8/5 <span class="text">Note</span></li>
                 <li class="duree">1h02m <span class="text">Durée</span></li>
                 <li class="fav"><i class="fas fa-heart"></i> <span class="text">favoris</span></li>
@@ -41,10 +41,7 @@
                     <div class="duree">Durée <span class="heure">1h02m</span></div>
                     <div class="note">Note 
                         <div class="star">
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked" v-for="i in 4" :key="i"></i>
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
