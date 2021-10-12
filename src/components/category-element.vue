@@ -2,6 +2,7 @@
     <div class="category-element w-full mb-4 cursor-pointer" :id="id">
         <div class="banner-category-element relative bg-black">
             <img :src="require('../assets/lidigital.jpg')" alt="" class="object-cover w-max h-auto hover:opacity-40">
+            <img :src="require('../assets/play.png')" alt="" class="absolute top-10 rounded-full left-1/3 bg-white h-20 w-20 opacity-0 hover:opacity-100">
             <img :src="require('../assets/yutouch.jpg')" alt="" class="absolute rounded-full h-14 w-14 border-4 border-white -bottom-5 right-10">
             <div class="newticket absolute top-3 -left-2 z-10 w-28 h-7 text-center text-white" :class="colorTicket" v-if="showticket">
                 {{labelTicket}}
