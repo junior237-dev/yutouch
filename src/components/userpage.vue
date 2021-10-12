@@ -1,20 +1,20 @@
 <template>
-    <div class="space-user w-full mx-auto mt-0 md:flex">
-        <div class="w-1/5 white hidden md:block">
-            <ul class="sidebar pl-3 border-r border-b border-gray-300 bg-gray-100">
-                <li class="h-20 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">home</i></span><span class="block text-sm">Accueil</span></li>
-                <li class="h-20 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">ondemand_video</i></span><span class="block text-sm">Mes tutos</span></li>
-                <li class="h-20 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300 active-menu"><span class="block"><i class="material-icons">school</i></span><span class="block text-sm">Parcours</span></li>
-                <li class="h-20 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">notifications</i></span><span class="block text-sm">Notifications</span></li>
-                <li class="h-20 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">favorite_border</i></span><span class="block text-sm">Favoris</span></li>
-                <li class="h-20 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">person</i></span><span class="block text-sm">Profil</span></li>
+    <div class="space-user w-full mx-auto mt-0 md:flex md:items-stretch">
+        <div class="divsidebar w-1/5 white hidden md:block md:min-h-screen border-r border-b border-gray-300 bg-gray-100">
+            <ul class="sidebar pl-3 ">
+                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300 active-menu"><span class="block"><i class="material-icons">home</i></span><span class="block text-sm ml-2">Accueil</span></li>
+                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">ondemand_video</i></span><span class="block text-sm ml-2">Mes tutos</span></li>
+                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">school</i></span><span class="block text-sm ml-2">Parcours</span></li>
+                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">notifications</i></span><span class="block text-sm ml-2">Notifications</span></li>
+                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">favorite_border</i></span><span class="block text-sm ml-2">Favoris</span></li>
+                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">person</i></span><span class="block text-sm ml-2">Profil</span></li>
             </ul>
         </div>
-        <div class="header w-full h-auto my-3">
+        <div class="header w-full h-auto my-0">
             <div class="first-container relative py-2.5 pl-5 h-20 border-b border-gray-300 bg-gray-200">
                 <h2 class="text-xl text-gray-400">ACCUEIL APPRENANT</h2>
                 <div class="status" @click="showstatusfunction">
-                    <span class="apprenant-formateur text-base font-light text-gray-600">{{status}}</span>
+                    <span class="apprenant-formateur text-base font-light text-gray-600 cursor-pointer">{{status}}</span>
                 </div>
                 <transition name="transitionStatusChoice">
                     <ul class="status-choice top-20 absolute left-0 right-0 bg-white" v-if="showstatuschoice">
@@ -43,6 +43,8 @@
             </section>
         </div>
     </div>
+
+    {{parcoursDOM()}}
 </template>
 
 <script>
@@ -58,19 +60,30 @@ export default {
         status = ref('Accès Apprenant'),
         showstatuschoice = ref(false),
         changestatus = function(e) {
-            // e.currentTarget.classList.add("active-status-choice")
             status.value = e.currentTarget.innerHTML
             showstatuschoice.value = false
-            // console.log(e.currentTarget.innerHTML)
-        }, //active-status-choice
+        },
         showstatusfunction = function() {
             showstatuschoice.value = !showstatuschoice.value
-            // if (showstatuschoice.value === true && e.currentTarget.firstChild.innerHTML === "Accès Apprenant") {
-            //     console.log(e.currentTarget.parentNode.lastChild.firstChild)
-            //     e.currentTarget.parentNode.lastChild.firstChild.classList.add("active-status-choice")
-            // } else if (showstatuschoice.value === true && e.currentTarget.firstChild.innerHTML === "Accès Formateur") {
-            //     e.currentTarget.parentNode.lastChild.lastChild.classList.add("active-status-choice")
-            // }
+        },
+        parcoursDOM = function() {
+            let sidebar
+            let topsidebar
+
+            window.setTimeout(()=>{ // initialissation des variables sidebar et topsidebar après 200ms
+                sidebar = document.querySelector('ul.sidebar')
+                topsidebar = sidebar.getBoundingClientRect().top + window.scrollY
+            }, 200)
+
+            let fixedsidebarfunction = function() {
+                
+                if(window.scrollY > topsidebar && !sidebar.classList.contains("fixedsidebar")) {
+                    sidebar.classList.add("fixedsidebar")
+                } else if(window.scrollY < topsidebar && sidebar.classList.contains("fixedsidebar")) {
+                    sidebar.classList.remove("fixedsidebar")
+                }
+            }
+            window.addEventListener('scroll', fixedsidebarfunction)
         },
         dashboardElements = [
             {
@@ -92,38 +105,23 @@ export default {
             status,
             dashboardElements,
             showstatuschoice,
+            parcoursDOM,
             showstatusfunction,
             changestatus
         }
     },
-    mounted() {
-        window.addEventListener("scroll", this.updateScroll)
-    },
-    methods: {
-        updateScroll() {
-            const scrollPosition = window.scrollY;
-            let header_bar = document.querySelector("nav.header_bar").style.height
-            // if (scrollPosition > 96 && document.querySelector('ul.sidebar')) {
-            //     let sidebar = document.querySelector('ul.sidebar')
-            //     sidebar.classList.add('fixedsidebar')
-            //     this.scrollNav = true;
-            //     return;
-            // } else {}
-            // this.scrollNav = false
-            console.log('la h du header est:'+header_bar)
-            console.log(`le scroll de la est: ${scrollPosition}`)
-            return ''
-        },
-    }
+    
+    
 }
 </script>
 
 <style lang="scss" scoped>
-
+    $pourcentwidthsidebar: 137*100 / 822;
     .fixedsidebar {
         position: fixed;
         top: 0;
         left: 0;
+        width: $pourcentwidthsidebar + 0%
     }
     .header span.apprenant-formateur::after {
         content: "";

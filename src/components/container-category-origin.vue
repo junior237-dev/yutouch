@@ -6,7 +6,7 @@
         </div>
         <div class="categories-element text-left w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-3 sm:gap-4">
             <div class="h-auto w-auto div-element-category" v-for="i in 9" :key="i">
-                <router-link :to="'/page_formation/45'" ><category-element :showticket="false" :showstars="true"/></router-link>
+                <router-link :to="'/page_formation'" ><category-element :showticket="false" :showstars="true"/></router-link>
             </div>
         </div>
     </div>

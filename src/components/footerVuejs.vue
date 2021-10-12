@@ -11,19 +11,16 @@
                         <div class="option" ref="option">
                             <span ref="optio"> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span>
                         </div>
-
                         <div class="option" ref="option">
                             <span ref="optio"> <img src="../assets/drapeau_anglais.png" alt="">Cours en Anglais</span>
                         </div>
                     </div>
-
                     <div class="selected" ref="selected" @click="toggleDropdown">
                         <span> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span> 
                         <!-- <i class="fas fa-caret-down" v-show="!isDown"></i> <i class="fas fa-caret-up" v-show="isDown"></i> -->
                     </div>
               </li>
           </ul>
-
           <ul class="liens">
               <li class="title">Liens Utiles</li>
               <li>Abonnement</li>
@@ -31,20 +28,17 @@
               <li>Vidéos Gratuites</li>
               <li>Entreprises</li>
           </ul>
-
           <ul class="aide">
               <li class="title">Aide</li>
               <li>Aide en ligne</li>
               <li>Devenir Formateur</li>
           </ul>
-
           <ul class="info">
               <li>34 246 197 <span>de cours en ligne suivis!</span></li>
               <li>1 168 445 <span>apprenants</span></li>
               <li>88 978 <span>tuto vidéo</span></li>
           </ul>
       </div>
-
       <div class="facultative_footer">
           <div class="copyright"> Copyright © YuTouch</div>
           <div class="sn">
@@ -60,9 +54,10 @@
 export default {
     name: 'page_footer',
 
-    data() {
+    setup() {
+        let isDown = false
         return {
-            isDown: false
+            isDown
         }
     },
 
@@ -103,19 +98,20 @@ export default {
 .footerapp {
     background-color: #1b1d1f;
     color: #afccda;
-    padding: 35px 0 15px 0;
+    padding: 23px 0 15px 0;
+    margin-top: 10px;
 
     .main_footer {
         display: flex;
         justify-content: space-between;
         width: 85%;
-        margin: 0 auto 25px;
-        padding-bottom: 15px;
+        margin: 0 auto 8px;
+        padding-bottom: 0px;
         border-bottom: 1px solid #3e4247;
 
         ul li {
             margin-bottom: 10px;  
-            font-size: 15px; 
+            font-size: 12px; 
         }
 
         ul li:hover:not(:first-child) {
@@ -126,7 +122,7 @@ export default {
         ul li.title {
             margin-bottom: 20px; 
             color: white;
-            font-size: 20px;  
+            font-size: 18px;  
         }
 
         ul li span {
@@ -241,15 +237,15 @@ export default {
         display: flex;
         justify-content: space-between;
         width: 85%;
-        margin: 0 auto 3px;
+        margin: 0 auto;
 
         .copyright {
-            font-size: 11px;
+            font-size: 9px;
         }
 
         .sn i{
-            font-size: 20px;
-            margin-left: 10px;
+            font-size: 10px;
+            margin-left: 9px;
         }
     }
 

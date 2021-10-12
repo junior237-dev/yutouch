@@ -1,5 +1,5 @@
 <template>
-    <div class="category-element w-full mb-4 cursor-pointer" :id="id ">
+    <div class="category-element w-full mb-4 cursor-pointer" :id="id">
         <div class="banner-category-element relative bg-black">
             <img :src="require('../assets/lidigital.jpg')" alt="" class="object-cover w-max h-auto hover:opacity-40">
             <img :src="require('../assets/yutouch.jpg')" alt="" class="absolute rounded-full h-14 w-14 border-4 border-white -bottom-5 right-10">
