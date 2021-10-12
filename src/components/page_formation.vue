@@ -111,20 +111,28 @@
                     <h2>Table des matières de cette formation Photoshop <span class="gray">(durée : 1h02m)</span></h2>
 
                     <div class="chapters">
-                        <div class="chapter"> 
-                            <div class="title" @click="toggleDropdown">
+
+                        <div class="chapter" v-for="chapter in chapters" :key="chapter.id">
+                            <div class="title" @click="toggleDropdown(chapter)">
+                                <i class="fas fa-plus-circle gray" v-show="!chapter.open"></i> <i class="fas fa-minus-circle" v-show="chapter.open"></i> <span>{{chapter.title}}</span>
+                            </div>
+                            <div class="cache" v-html="chapter.cache" v-show="chapter.open"></div>
+                        </div>
+
+                        <!-- <div class="chapter"> 
+                            <div class="title" @click="toggleDropdown(chapter)">
                                 <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Introduction</span>
                             </div>
-                            <div class="cache" ref="cache">
+                            <div class="cache" :class="{open : open === true}">
                                 <i class="fas fa-play-circle"></i> <span class="topic">Introduction les calques de réglages Noir&Blanc et sur les LUTs <sup>gratuit</sup><span class="dot">...............................</span></span>00:01:19
                             </div>
                         </div>
 
                         <div class="chapter"> 
-                            <div class="title" @click="toggleDropdown">
+                            <div class="title" @click="toggleDropdown(chapter)">
                                 <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Le Noir&Blanc</span>
                             </div>
-                            <div class="cache">
+                            <div class="cache" :class="{open : open === true}">
                                 <span class="topic_normal">0501 Le Noir&Blanc Sublimé <span class="dot">.................................................................................................</span> 00:12:28</span>
                                 <span class="topic_normal">0502 Noir&Blanc et Virage Partiel <span class="dot">........................................................................................</span> 00:09:06</span>
                                 <span class="topic_normal">0503 Rétablir des couleurs dans du Noir&Blanc <span class="dot">..............................................................</span> 00:08:48</span>
@@ -134,16 +142,16 @@
                         </div>
 
                         <div class="chapter"> 
-                            <div class="title" @click="toggleDropdown">
+                            <div class="title" @click="toggleDropdown(chapter)">
                                 <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Les LUTs et la correspondance de couleur</span>
                             </div>
                         </div>
 
                         <div class="chapter"> 
-                            <div class="title" @click="toggleDropdown">
+                            <div class="title" @click="toggleDropdown(chapter)">
                             <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Conclusion de chapitre</span>
                             </div>
-                        </div>
+                        </div> -->
 
                         <button>Fichiers sources <i class="fas fa-download"></i></button>
                     </div>
@@ -160,25 +168,35 @@
                 <div class="questions">
                     <div class="titre">QUESTIONS SUR LE TUTO</div>
 
-                    <div class="question">
-                        <div class="title" @click="toggleDropdown">
+                    <div class="question" v-for="question in questions" :key="question.id">
+                        <div class="title" @click="toggleDropdown(question)">
+                            <i class="fas fa-plus-circle gray" v-show="!question.open"></i> <i class="fas fa-minus-circle" v-show="question.open"></i> <span>{{question.title}}</span>
+                        </div>
+                        <div class="cache" v-show="question.open">
+                            <span class="response">{{question.response}}</span>
+                            <span class="gray">{{question.gray}} <span class="blue" v-html="question.ask"></span> </span>
+                        </div>
+                    </div>
+
+ <!--                    <div class="question">
+                        <div class="title" @click="toggleDropdown(chapter)">
                             <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Avec quelle version de logiciel ce tuto est-il compatible ?</span>
                         </div>
-                        <div class="cache" ref="cache">
+                        <div class="cache" :class="{open : open === true}">
                             <span class="response">Photoshop CC</span>
                             <span class="gray">La réponse vous a t-elle été utile ? <span class="blue">OUI</span> - <span class="blue">NON</span> </span>
                         </div>
                     </div>
 
                     <div class="question">
-                        <div class="title" @click="toggleDropdown">
+                        <div class="title" @click="toggleDropdown(chapter)">
                             <i class="fas fa-plus-circle gray" v-show="!open"></i> <i class="fas fa-minus-circle" v-show="open"></i> <span>Quel est le niveau requis pour suivre ce tuto ?</span>
                         </div>
-                        <div class="cache" ref="cache">
+                        <div class="cache" :class="{open : open === true}">
                             <span class="response">intermédiare</span>
                             <span class="gray">La réponse vous a t-elle été utile ? <span class="blue">OUI</span> - <span class="blue">NON</span> </span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <button>poser une question au formateur</button>
                 </div>
@@ -191,8 +209,8 @@
         <div class="videos">
             <div class="video" v-for="i in 6" :key="i">
                 <div class="video_img">
-                    <video src="../assets/photoshop.mp4" controls></video>
-                    <img src="../assets/cover2.jpg" alt="">
+                    <img class="formation" src="../assets/formation.png" alt="Formation">
+                    <img class="formateur" src="../assets/cover2.jpg" alt="Formateur">
                 </div>
                 <div class="info">Les possibilités insoupçconnées des calques courbes de transfert de dégradé dans photoshop CC</div>
                 <div class="autor gray"> de <span class="blue">Pascal Gauch</span> - Durée : 23m49s</div>
@@ -217,13 +235,72 @@
 </template>
 
 <script>
-
+import Footer from './footer.vue'
 export default {
     name: 'page_formation',
+
+    components: {
+        Footer
+    },
+
     data() {
         return {
             scrollNav: false,
             open: false,
+
+            chapters: [
+                {
+                    title: 'Introduction',
+                    open: false,
+                    id: 1,
+                    cache: '<i class="fas fa-play-circle"></i> <span class="topic cursor-pointer hover:text-lime">Introduction les calques de réglages Noir&Blanc et sur les LUTs <sup class="text-lime">gratuit</sup><span class="dot text-xs text-gray-500">...............................</span></span>00:01:19'
+                },
+
+                {
+                    title: 'Le Noir&Blanc',
+                    open: false,
+                    id: 2,
+                    cache: `<span class='topic_normal block mt-1'>0501 Le Noir&Blanc Sublimé <span class='dot text-xs text-gray-500'>.................................................................................................</span> 00:12:28</span>
+                            <span class='topic_normal block mt-1'>0502 Noir&Blanc et Virage Partiel <span class='dot text-xs text-gray-500'>........................................................................................</span> 00:09:06</span>
+                            <span class='topic_normal block mt-1'>0503 Rétablir des couleurs dans du Noir&Blanc <span class='dot text-xs text-gray-500'>..............................................................</span> 00:08:48</span>
+                            <span class='topic_normal block mt-1'>0504 Blanchiment et contraste : effet bleach bypass <span class='dot text-xs text-gray-500'>......................................................</span> 00:05:46</span>
+                            <span class='topic_normal block mt-1'>0505 Noir&Blanc et LUTs <span class='dot text-xs text-gray-500'>.........................................................................................................</span> 00:08:14</span> `
+                },
+
+                {
+                    title: 'Les LUTs et la correspondance de couleur',
+                    open: false,
+                    id: 3,
+                    cache: ''
+                },
+                
+                {
+                    title: 'Conclusion de chapitre',
+                    open: false,
+                    id: 4,
+                    cache: ''
+                },
+            ],
+
+            questions: [
+                {
+                    title: 'Avec quelle version de logiciel ce tuto est-il compatible ?',
+                    open: false,
+                    id: 1,
+                    response: 'Photoshop CC',
+                    gray: 'La réponse vous a t-elle été utile ? ',
+                    ask: 'OUI <span class="text-black">-</span> NON '
+                },
+
+                {
+                    title: 'Quel est le niveau requis pour suivre ce tuto ?',
+                    open: false,
+                    id: 1,
+                    response: 'intermédiare',
+                    gray: 'La réponse vous a t-elle été utile ? ',
+                    ask: 'OUI <span class="text-black">-</span> NON '
+                }
+            ]
         }
     },
 
@@ -241,10 +318,9 @@ export default {
             this.scrollNav = false
         }, 
 
-        toggleDropdown() {
-            this.$refs.cache.classList.toggle('open')
-            this.open = !this.open
-            console.log('clicked')
+        toggleDropdown(chapter) {
+            chapter.open = !chapter.open
+            console.log(chapter.open)
         }
     }
 }
@@ -720,13 +796,13 @@ $blue: #00a9f0;
                 .cache {
                     font-size: 15px;
                     padding: 15px 0 0 25px;
-                    display: none;
+                    
 
                     sup, i {
                         color: #2fc5a9;
                     }
 
-                    .topic:hover {
+                    span.topic:hover {
                         color: #2fc5a9;
                         cursor: pointer;
                     }
@@ -736,14 +812,10 @@ $blue: #00a9f0;
                         color: #87898c;
                     }
 
-                    .topic_normal {
+                    span.topic_normal {
                         display: block;
                         margin-bottom: 5px;
                     }
-                }
-
-                .cache.open {
-                    display: block;
                 }
             }
 
@@ -891,13 +963,13 @@ $blue: #00a9f0;
                 position: relative;
                 z-index: 100;
 
-                video {
+                img.formation {
                     width: 100%;
                     height: 180px;
                     object-fit: cover;
                 }
 
-                img {
+                img.formateur {
                     width: 44px;
                     height: 44px;
                     border-radius: 50px;
@@ -922,6 +994,10 @@ $blue: #00a9f0;
 
             .star .checked {
                 color: #ffc241;
+            }
+
+            @media screen and (max-width: 459px) {
+                min-width: 100%;
             }
         }
     }

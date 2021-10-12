@@ -8,13 +8,19 @@
               <li>Nous recutons</li>
               <li class="select_box">
                     <div class="options_container" ref="options_container">
+
+                        <div class="option" v-for="option in options" :key="option.id">
+                            <span ref="optio"> <img src="../assets/drapeau_france.jpg" :alt="option.alt">{{option.langue}}</span>
+                        </div>
+
+                        <!-- 
                         <div class="option" ref="option">
                             <span ref="optio"> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span>
                         </div>
 
                         <div class="option" ref="option">
                             <span ref="optio"> <img src="../assets/drapeau_anglais.png" alt="">Cours en Anglais</span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="selected" ref="selected" @click="toggleDropdown">
@@ -62,7 +68,23 @@ export default {
 
     data() {
         return {
-            isDown: false
+            isDown: false,
+
+            options: [
+                {
+                    img: '../assets/drapeau_france.jpg',
+                    id: 1,
+                    alt: 'France',
+                    langue: 'Cours en Français'
+                },
+
+                {
+                    img: '../assets/drapeau_anglais.png',
+                    id: 2,
+                    alt: 'Anglais',
+                    langue: 'Cours en Anglais'
+                }
+            ]
         }
     },
 
@@ -233,6 +255,10 @@ export default {
                 li {
                     text-align: center;
                 }
+            }
+
+            li.select_box {
+                margin: auto;
             }
         }
     }
