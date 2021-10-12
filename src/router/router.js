@@ -7,12 +7,18 @@ import pageFormation from "../components/page_formation.vue"
 import userPage from "../components/userpage.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
+import pageCategorie from "../components/page_categorie.vue"
 
 const routes = [
     {
         name: "accueil",
         path:"/",
         component: home
+    },
+    {
+        name: "page des catégories de formations",
+        path: "/page_categorie",
+        component: pageCategorie
     },
     {
         name: "page des formations",

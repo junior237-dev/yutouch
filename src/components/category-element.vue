@@ -7,7 +7,7 @@
                 {{labelTicket}}
             </div>
         </div>
-        <h3 class="description-category-element w-full text-gray-700 leading-4 text-sm mt-4 font-semibold">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
+        <h3 class="description-category-element w-full text-gray-800 leading-4 text-sm mt-4 font-light">Photo de paysage à l'iphone: retouche professionnelle grâce au format ProRaw d'Apple !</h3>
         <div class="author-category-element mt-1 text-sm">
             By <strong class="text-blue-500">{{authorName}}</strong><span class="datetime text-gray-500"> - Durée: {{listingDatetime}}</span>
         </div>

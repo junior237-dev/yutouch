@@ -24,7 +24,7 @@
                 </transition>
             </div> 
             <div class="dashbord w-full mx-auto h-auto">
-                <div class="hello mt-5 text-2xl  text-center text-yellow-500">Bonjour {{user}} !</div>
+                <div class="hello mt-5 text-2xl  text-center text-yellow-500">Bonjour {{user}} ! 👋</div>
                 <div class="dashbord-elements w-4/5 mt-10 mx-auto">
                     <ul class="dashboard-element-range sm:w-2/3 sm:mx-auto grid grid-cols-3 gap-2">
                         <li v-for="(item, indice) in dashboardElements" :key="indice"><span class="text-center h-8 w-8"><i class="material-icons inline-block w-4/5 mx-auto text-gray-500">{{item.iconName}}</i><br><span class="label inline-block text-gray-500 w-4/5 mx-auto">{{item.iconLabel}}</span></span></li>
@@ -36,7 +36,7 @@
                     <container-category-second :viewmoreText="'toutes les nouveautés'" :categoryTitle="'Nouveautés'" :colorTicket="['bg-blue-400']" :labelTicket="'nouveau'"/>
                 </div>
             </section>
-            <section class="promo">
+            <section class="promo mb-10">
                 <div class="containerpromo">
                     <container-category-second :viewmoreText="'toutes les promos'" :categoryTitle="'Promo...'" :colorTicket="['bg-yellow-600']" :labelTicket="'Promo!!!'"/>
                 </div>
@@ -121,7 +121,8 @@ export default {
         position: fixed;
         top: 0;
         left: 0;
-        width: $pourcentwidthsidebar + 0%
+        width: $pourcentwidthsidebar + 0%;
+        padding-top: 30px
     }
     .header span.apprenant-formateur::after {
         content: "";

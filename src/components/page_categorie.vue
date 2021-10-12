@@ -248,7 +248,7 @@ span {
 
           .video_img {
             position: relative;
-            z-index: 100;
+            z-index: 0;
 
             video {
                 width: 100%;

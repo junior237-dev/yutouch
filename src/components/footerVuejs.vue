@@ -1,5 +1,5 @@
 <template>
-  <div class="footerapp">
+  <div class="footerapp" v-if="false">
       <div class="main_footer">
           <ul class="tuto">
               <li class="title">YuTouch.com</li>
