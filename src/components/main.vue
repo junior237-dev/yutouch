@@ -4,10 +4,11 @@
         <!-- <connexion /> -->
         <!-- <page-formation /> -->
         <!-- <inscription /> -->
-        <principal-banner />
+        <!-- <principal-banner />
         <container-category-origin />
         <container-category-second v-for="i in 3" :key="i" />
-        <banner-footer />
+        <banner-footer /> -->
+        <page-categorie />
     </div>
 </template>
 
@@ -16,10 +17,11 @@
 // import pageFormation from './page_formation.vue'
 // import inscription from "./inscription.vue"
 // import userpage from "./userpage.vue"
-import principalBanner from "./principal-banner.vue"
-import containerCategoryOrigin from "./container-category-origin.vue"
-import containerCategorySecond from "./container-category-second.vue"
-import bannerFooter from "./banner-footer.vue"
+// import principalBanner from "./principal-banner.vue"
+// import containerCategoryOrigin from "./container-category-origin.vue"
+// import containerCategorySecond from "./container-category-second.vue"
+// import bannerFooter from "./banner-footer.vue"
+import PageCategorie from './page_categorie.vue'
 export default {
     name: 'mainVuejs',
     components: {
@@ -27,10 +29,11 @@ export default {
         // connexion
         // pageFormation,
         // inscription,
-        containerCategorySecond,
-        containerCategoryOrigin,
-        bannerFooter,
-        principalBanner
+        // containerCategorySecond,
+        // containerCategoryOrigin,
+        // bannerFooter,
+        // principalBanner,
+        PageCategorie
     },
     setup() {
         

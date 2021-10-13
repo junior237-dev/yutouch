@@ -23,7 +23,7 @@ export default {
         classList: {
             type: Array,
             default: function() {
-                return ['lg:bg-transparent', 'lg:absolute', 'lg:top-0', 'lg:left-0', 'lg:right-0', 'lg:z-30']
+                return ['lg:bg-pink-700', 'lg:relative', 'lg:top-0', 'lg:left-0', 'lg:right-0', 'lg:z-30']
             }
         }
     },
