@@ -12,12 +12,12 @@
     </div>
 
     <div class="body">
-      <Sidebar v-show="open" @close="toggleSidebar"/>
+      <Sidebar @close="toggleSidebar" :isClosed="isClosed" :sidebarIsClosed="sidebarIsClosed"/>
 
       <div class="videos_container">
         <div class="head">
           <div class="left">
-            <i class="fas fa-plus-circle gray" @click="toggleSidebar"></i> 
+            <i class="fas fa-plus-circle gray" v-show="isClosed" @click="toggleSidebar"></i> 
             <span class="title">331 tuto Web</span>
             <span class="small"><i>(plus d'infos)</i> </span>
           </div>
@@ -98,15 +98,43 @@ export default {
   data() {
     return {
       open: false,
+      isClosed: null,
+      sidebarIsClosed: null
     }
   },
   
   components: { Footer, Header, Sidebar },
 
+  created() {
+    window.addEventListener('resize', this.checkScreen);
+    window.addEventListener('resize', this.checkScreenAgain);
+    this.checkScreen()
+    this.checkScreenAgain()
+  },
+
   methods: {
     toggleSidebar() {
-      this.open = !this.open
+      this.sidebarIsClosed = !this.sidebarIsClosed
+      console.log(this.sidebarIsClosed + ' 2')
     },
+
+    checkScreen() {
+      this.windowWidth= window.innerWidth;
+      if (this.windowWidth <= 878) {
+          this.isClosed = true;
+          return
+      }
+      this.isClosed = false
+      return
+    },
+
+    checkScreenAgain() {
+      this.windowWidth2= window.innerWidth;
+      if (this.windowWidth2 >= 878) {
+          this.sidebarIsClosed = false;
+          return
+      }
+    }
   }
 }
 </script>
@@ -265,9 +293,11 @@ span {
         }
       }
 
-      @media screen and (max-width: 791px) {
-        .videos .video {
-          width: 100%;
+      @media screen and (max-width: 878px) {
+        width: 100%;
+
+        .left i.gray {
+          display: inline-block;
         }
       }
 
@@ -281,9 +311,22 @@ span {
         }
       }
 
-      @media screen and (max-width: 639px) {
-        .left i.gray {
-          display: inline-block;
+      @media screen and (max-width: 791px) {
+        .videos .video {
+          width: 48%;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .videos .video {
+          width: 47.5%;
+        }
+      }
+
+      @media screen and (max-width: 541px) {
+        .videos .video {
+          width: 100%;
+          margin-left: 0;
         }
       }
     }

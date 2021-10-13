@@ -1,33 +1,55 @@
 <template>
-  <transition name="fade">
-    <div class="sidebar" ref="sidebar">
-    
-        <i class="fas fa-minus-circle" @click="closeSideBar"></i>
-        
+    <div class="sidebar" v-show="!isClosed">
         <div class="web">
-        <span class="title">Web</span>
-        <span>Toutes</span>
-        <span class="active">Tuto Web gratuits</span>
-        <span>Formation A à Z Web</span>
-        <span>Tuto Web en promo</span>
+            <span class="title">Web</span>
+            <span>Toutes</span>
+            <span class="active">Tuto Web gratuits</span>
+            <span>Formation A à Z Web</span>
+            <span>Tuto Web en promo</span>
         </div>
 
         <div class="themes">
-        <span class="title">Thèmes</span>
-        <span>Transformation digitale</span>
+            <span class="title">Thèmes</span>
+            <span>Transformation digitale</span>
         </div>
 
         <div class="logiciels">
-        <span class="title">Logiciels</span>
-        <span v-for="logiciel in logiciels" :key="logiciel">{{logiciel}}</span>
+            <span class="title">Logiciels</span>
+            <span v-for="logiciel in logiciels" :key="logiciel">{{logiciel}}</span>
         </div>
     </div>
+
+    <transition name="fade">
+        <div class="newSidebar" v-show="sidebarIsClosed">
+        
+            <i class="fas fa-minus-circle" @click="closeSideBar"></i>
+            
+            <div class="web">
+                <span class="title">Web</span>
+                <span>Toutes</span>
+                <span class="active">Tuto Web gratuits</span>
+                <span>Formation A à Z Web</span>
+                <span>Tuto Web en promo</span>
+            </div>
+
+            <div class="themes">
+                <span class="title">Thèmes</span>
+                <span>Transformation digitale</span>
+            </div>
+
+            <div class="logiciels">
+                <span class="title">Logiciels</span>
+                <span v-for="logiciel in logiciels" :key="logiciel">{{logiciel}}</span>
+            </div>
+        </div>
     </transition>
 </template>
 
 <script>
 export default {
     name: 'sidebar',
+
+    props: ['isClosed', 'sidebarIsClosed'],
 
     data() {
         return {
@@ -48,14 +70,29 @@ export default {
                 'iWeb',
                 'Spip',
                 'Viadeo'
-            ]
+            ],
         }
+    },
+
+    created() {
+        console.log(this.sidebarIsClosed)
     },
 
     methods: {
         closeSideBar() {
             this.$emit('close')
-        }
+        },
+
+        /* checkScreen() {
+            this.windowWidth= window.innerWidth;
+            if (this.windowWidth <= 878) {
+                this.isClose = false;
+                return
+            }
+            console.log(this.isClose + ' 2')
+            this.isClose = true
+            return
+        } */
     },
 }
 </script>
@@ -136,8 +173,60 @@ span {
         .title {
             margin: 0 0 15px 0;
         }
+    } 
 
-        @media screen and (max-width: 639px) {
+    .newSidebar {
+        overflow: hidden;
+        margin: 0 15px 0 0;
+
+        i {
+            float: right;
+            margin: 15px 10px 10px 0;
+            font-size: 17px;
+            cursor: pointer;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        div {
+            padding: 0 0 15px 0;
+            margin: 0 0 15px 0;
+            width: fit-content;
+            
+            &:not(:last-child) {
+                border-bottom: 1px solid $gray;
+            }
+
+            span:not(.title) {
+                font-size: $small;
+                margin: 0 0 3px 0;
+                color: $gray;
+
+                &:hover {
+                    @extend .link;
+                }
+
+                &.active {
+                    color: #3cc5b1;
+                    
+                    &:hover {
+                    border-bottom: 1px solid #3cc5b1;
+                    }
+                }
+            }
+        }
+
+        span {
+            display: block;
+        }
+
+        .title {
+            margin: 0 0 15px 0;
+        }
+
+        @media screen and (max-width: 878px) {
             width: 38%;
             position: fixed;
             z-index: 178;
@@ -158,7 +247,19 @@ span {
                 }
             }
         }
-    }   
+
+        @media screen and (max-width: 539px) {
+            width: 54%;
+        }
+
+        @media screen and (max-width: 439px) {
+            width: 64%;
+        }
+
+        @media screen and (max-width: 339px) {
+            width: 100%;
+        }
+    }  
 
     .fade-enter-from, .fade-leave-to {
         opacity: 0;
@@ -168,5 +269,7 @@ span {
     .fade-enter-active, .fade-leave-active {
         transition: opacity .7s ease, transform .7s ease;
     }
+
+    
 }
 </style>
