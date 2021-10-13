@@ -232,7 +232,7 @@
 </template>
 
 <script>
-import Footer from './footer.vue'
+import Footer from './footerVuejs.vue'
 export default {
     name: 'page_formation',
 

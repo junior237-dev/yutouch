@@ -1,5 +1,5 @@
 <template>
-    <nav class="header_bar w-full left-0 h-24 bg-gray-600" :class="classList">
+    <nav class="header_bar w-full left-0 h-24 bg-pink-600" :class="classList">
         <div class="navbar w-full h-full py-4 relative lg:flex lg:justify-between lg:mx-auto lg:w-5/6">
             <div class="small_menu_and_logo w-auto float-left ml-3 lg:float-none">
                 <menu-small-media v-if="showMenuSmallMedia" />

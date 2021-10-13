@@ -198,17 +198,15 @@ span {
           font-size: $small;
           margin: 0 0 3px 0;
           color: $gray;
+          cursor: pointer;
+          transition: color .5s ease;
 
           &:hover {
-            @extend .link;
+            color: $blue;
           }
 
           &.active {
-            color: #3cc5b1;
-            
-            &:hover {
-              border-bottom: 1px solid #3cc5b1;
-            }
+            color: rgb(219, 39, 119);           
           }
         }
       }
