@@ -9,7 +9,8 @@
 <script>
 import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue' 
-import footVuejs from './components/footerVuejs.vue'
+import footVuejs from './components/footer.vue'
+
 
 export default {
   name: 'App',
