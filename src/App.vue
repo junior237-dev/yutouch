@@ -3,18 +3,18 @@
      <!-- <head-vuejs /> -->
     <!--<main-vuejs/>
     <foot-vuejs /> -->
-    <Page_formation /> 
-    <!-- <Page_categorie /> -->
+    <!-- <Page_formation />  -->
+    <Page_categorie />
     <!-- <foot-vuejs /> -->
   </div>
 </template>
 
 <script>
-// import Page_categorie from './components/page_categorie.vue'
+import Page_categorie from './components/page_categorie.vue'
 //  import headVuejs from './components/header.vue'
 // import mainVuejs from './components/main.vue'
 // import footVuejs from './components/footer.vue' 
-import Page_formation from './components/page_formation.vue'
+// import Page_formation from './components/page_formation.vue'
 /*import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue' 
 import footVuejs from './components/footer.vue'*/
@@ -27,8 +27,8 @@ export default {
     mainVuejs, 
     footVuejs, 
     footVuejs,*/
-    Page_formation, 
-    // Page_categorie,
+    // Page_formation, 
+    Page_categorie,
   }
 }
 </script>

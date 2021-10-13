@@ -12,35 +12,12 @@
     </div>
 
     <div class="body">
-      <transition class="sidebarTrans">
-        <div class="sidebar" ref="sidebar">
-        
-          <i class="fas fa-minus-circle" @click="closeSideBar"></i>
-          
-          <div class="web">
-            <span class="title">Web</span>
-            <span>Toutes</span>
-            <span class="active">Tuto Web gratuits</span>
-            <span>Formation A à Z Web</span>
-            <span>Tuto Web en promo</span>
-          </div>
-
-          <div class="themes">
-            <span class="title">Thèmes</span>
-            <span>Transformation digitale</span>
-          </div>
-
-          <div class="logiciels">
-            <span class="title">Logiciels</span>
-            <span v-for="logiciel in logiciels" :key="logiciel">{{logiciel}}</span>
-          </div>
-        </div>
-      </transition>
+      <Sidebar v-show="open" @close="toggleSidebar"/>
 
       <div class="videos_container">
         <div class="head">
           <div class="left">
-            <i class="fas fa-plus-circle gray" @click="openSideBar"></i> 
+            <i class="fas fa-plus-circle gray" @click="toggleSidebar"></i> 
             <span class="title">331 tuto Web</span>
             <span class="small"><i>(plus d'infos)</i> </span>
           </div>
@@ -113,45 +90,23 @@
 <script>
 import Footer from './footer.vue'
 import Header from './header.vue'
+import Sidebar from './sidebar.vue'
+
 export default {
   name: 'page_categorie',
 
   data() {
     return {
       open: false,
-      logiciels: [
-        'WordPress',
-        'Jomia',
-        'Dreamweaver',
-        'Google',
-        'Cloud',
-        'Elementor',
-        'Internet',
-        'WIX',
-        'Drupal',
-        'Contribute',
-        'Dotclear',
-        'IWeb',
-        'Magneto',
-        'iWeb',
-        'Spip',
-        'Viadeo'
-      ]
     }
   },
   
-  components: { Footer, Header },
+  components: { Footer, Header, Sidebar },
 
   methods: {
-    openSideBar() {
-      this.open = true
-      this.$refs.sidebar.classList.add('open')
+    toggleSidebar() {
+      this.open = !this.open
     },
-
-    closeSideBar() {
-      this.open = false
-      this.$refs.sidebar.classList.remove('open')
-    }
   }
 }
 </script>
@@ -191,100 +146,7 @@ span {
   } 
 
   .body {
-    display: flex;
-
-    .sidebar {
-      width: 16.666666666666664%;
-      margin: 0 15px 0 0;
-
-      i {
-          float: right;
-          margin: 15px 10px 10px 0;
-          font-size: 17px;
-          display: none;
-          
-
-          &:hover {
-            color: $blue;
-          }
-        }
-
-      div {
-        padding: 0 0 15px 0;
-        margin: 0 0 15px 0;
-        width: fit-content;
-        
-        &:not(:last-child) {
-          border-bottom: 1px solid $gray;
-        }
-
-        span:not(.title) {
-          font-size: $small;
-          margin: 0 0 3px 0;
-          color: $gray;
-
-          &:hover {
-            @extend .link;
-          }
-
-          &.active {
-            color: #3cc5b1;
-            
-            &:hover {
-              border-bottom: 1px solid #3cc5b1;
-            }
-          }
-        }
-      }
-
-      span {
-        display: block;
-      }
-
-      .title {
-        margin: 0 0 15px 0;
-      }
-
-      @media screen and (max-width: 639px) {
-        width: 0;
-        position: fixed;
-        z-index: 178;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: white;
-        overflow-x: hidden;
-        transition: 0.5s;
-
-        div {
-          margin: 10px auto 0;
-          width: 90%;
-          
-          span {
-            display: block;
-            transition: 0.3s;
-          }
-        }
-
-        &.open {
-          width: 200px;
-
-          i {
-            display: block;
-          }
-        }
-      }
-    }   
-
-    .sidebarTrans-enter-from, .sidebarTrans-leave-to {
-        opacity: 0;
-        transform: translateX(-300px);
-
-    }
-
-    .sidebarTrans-enter-active, .sidebarTrans-leave-active {
-        transition: opacity .7s ease, transform .7s ease;
-    } 
+    display: flex; 
 
     .videos_container {
       width: 83.33333333333334%;
@@ -300,6 +162,7 @@ span {
         i.gray {
           margin: 0 5px 0 0;
           display: none;
+          cursor: pointer;
 
           &:hover {
             color: $blue;
