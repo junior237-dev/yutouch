@@ -15,7 +15,6 @@
                         <div class="option" ref="option">
                             <span ref="optio"> <img src="../assets/drapeau_anglais.png" alt="">Cours en Anglais</span>
 ======= -->
-
                         <div class="option" v-for="option in options" :key="option.id">
                             <span ref="optio"> <img src="../assets/drapeau_france.jpg" :alt="option.alt">{{option.langue}}</span>
                         </div>
