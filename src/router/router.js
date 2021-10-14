@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// import headerVue from "../components/header.vue"
-// import mainVue from "../components/main.vue"
 import home from "../components/home.vue"
 import pageFormation from "../components/page_formation.vue"
 import userPage from "../components/userpage.vue"
+import tutoUserpage from "../components/tuto-userpage.vue"
+import accueilUserpage from "../components/accueil-userpage.vue"
+import parcoursUserpage from "../components/parcours-userpage.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
 import pageCategorie from "../components/page_categorie.vue"
@@ -29,6 +30,23 @@ const routes = [
         name: "page utilisateur",
         path: "/page_utilisateur",
         component: userPage,
+        children: [
+            {
+                name: "accueil",
+                path: "accueil",
+                component: accueilUserpage
+            },
+            {
+                name: "mes_tutos",
+                path: "mes_tutos",
+                component: tutoUserpage
+            },
+            {
+                name: "parcourrsPro",
+                path: "parcours_pro",
+                component: parcoursUserpage
+            }
+        ]
     },
     {
         name: "inscription",
