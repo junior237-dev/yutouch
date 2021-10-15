@@ -9,8 +9,8 @@
               <li class="select_box">
                     <div class="options_container" ref="options_container">
 
-                        <div class="option" v-for="option in options" :key="option.id">
-                            <span ref="optio"> <img src="../assets/drapeau_france.jpg" :alt="option.alt">{{option.langue}}</span>
+                        <div class="option" v-for="option in options" :key="option.id" @click="select(option)" v-html="option.content">
+
                         </div>
                     </div>
                     <div class="selected" ref="selected" @click="toggleDropdown">
@@ -59,50 +59,31 @@ export default {
 
             options: [
                 {
-                    img: '../assets/drapeau_france.jpg',
                     id: 1,
-                    alt: 'France',
-                    langue: 'Cours en Français'
+                    img: '../assets/drapeau_france.jpg',
+                    content: '<span> <img :src="require(`../assets/drapeau_france.jpg`)" alt="Français">Cours en Français</span>'
                 },
 
                 {
-                    img: '../assets/drapeau_anglais.png',
                     id: 2,
-                    alt: 'Anglais',
-                    langue: 'Cours en Anglais'
+                    img: '../assets/drapeau_anglais.png',
+                    content: '<span> <img :src="getImgUrl" alt="Anglais">Cours en Anglais</span>'
                 }
             ]
         }
     },
 
     methods: {
+        getImgUrl() {
+            return require('../assets/drapeau_france.jpg')
+        },
+
+        select(option) {
+            this.$refs.selected.innerHTML = option.content
+        },
+
         toggleDropdown() {
-            // const selected = this.$refs.selected;
-            const optionsContainer = this.$refs.options_container;
-            // const optionsList = this.$refs.options_container.children;
-
-            optionsContainer.classList.toggle('active')
-
-            /* for(var i = 0; i <= optionsList.length ; i++) {
-                optionsList[i].addEventListener('click', () => {
-                    console.log(optionsList[i])
-                }) 
-            } */
-
-            /* $.each(optionsList, function(key, value) {
-                list.push(key);
-            }); */
-
-            /* optionsList.filter( function (value, key) {
-                console.log(key, value)
-            }) */
-
-            /* optionsList.forEach( o => {
-                o.addEventListener('click', () => {
-                    selected.innerHTML = o.$refs.optio.innerHTML;
-                    optionsContainer.classList.remove('active')
-                })
-            }); */
+            this.$refs.options_container.classList.toggle('active')
         }
     }
 }

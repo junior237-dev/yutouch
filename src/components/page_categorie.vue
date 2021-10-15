@@ -10,6 +10,7 @@
     </div>
 
     <div class="body">
+<<<<<<< HEAD
       <transition name="sidebarTrans">
         <div class="sidebar" ref="sidebar">
           <i class="fas fa-minus-circle" @click="closeSideBar"></i>
@@ -30,11 +31,14 @@
           </div>
         </div>
       </transition>
+=======
+      <Sidebar @close="toggleSidebar" :isClosed="isClosed" :sidebarIsClosed="sidebarIsClosed"/>
+>>>>>>> ba8cba75e42e580c7d4790cffc7e44c4a7335ad5
 
       <div class="videos_container">
         <div class="head">
           <div class="left">
-            <i class="fas fa-plus-circle gray" @click="openSideBar"></i> 
+            <i class="fas fa-plus-circle gray" v-show="isClosed" @click="toggleSidebar"></i> 
             <span class="title">331 tuto Web</span>
             <span class="small"><i>(plus d'infos)</i> </span>
           </div>
@@ -90,7 +94,14 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import categoryElement from './category-element.vue'
+=======
+import Footer from './footer.vue'
+import Header from './header.vue'
+import Sidebar from './sidebar.vue'
+
+>>>>>>> ba8cba75e42e580c7d4790cffc7e44c4a7335ad5
 export default {
   components: { categoryElement },
 name: 'page_categorie',
@@ -114,19 +125,49 @@ let logiciels= [
       'Viadeo'
     ]
     return {
+<<<<<<< HEAD
       logiciels
     }
   },
+=======
+      open: false,
+      isClosed: null,
+      sidebarIsClosed: null
+    }
+  },
+  
+  components: { Footer, Header, Sidebar },
+
+  created() {
+    window.addEventListener('resize', this.checkScreen);
+    window.addEventListener('resize', this.checkScreenAgain);
+    this.checkScreen()
+    this.checkScreenAgain()
+  },
+>>>>>>> ba8cba75e42e580c7d4790cffc7e44c4a7335ad5
 
   methods: {
-    openSideBar() {
-      this.open = true
-      this.$refs.sidebar.classList.add('open')
+    toggleSidebar() {
+      this.sidebarIsClosed = !this.sidebarIsClosed
+      console.log(this.sidebarIsClosed + ' 2')
     },
 
-    closeSideBar() {
-      this.open = false
-      this.$refs.sidebar.classList.remove('open')
+    checkScreen() {
+      this.windowWidth= window.innerWidth;
+      if (this.windowWidth <= 878) {
+          this.isClosed = true;
+          return
+      }
+      this.isClosed = false
+      return
+    },
+
+    checkScreenAgain() {
+      this.windowWidth2= window.innerWidth;
+      if (this.windowWidth2 >= 878) {
+          this.sidebarIsClosed = false;
+          return
+      }
     }
   }
 }
@@ -167,100 +208,7 @@ span {
   } 
 
   .body {
-    display: flex;
-
-    .sidebar {
-      width: 16.666666666666664%;
-      margin: 0 15px 0 0;
-
-      i {
-          float: right;
-          margin: 15px 10px 10px 0;
-          font-size: 17px;
-          display: none;
-          
-
-          &:hover {
-            color: $blue;
-          }
-        }
-
-      div {
-        padding: 0 0 15px 0;
-        margin: 0 0 15px 0;
-        width: fit-content;
-        
-        &:not(:last-child) {
-          border-bottom: 1px solid $gray;
-        }
-
-        span:not(.title) {
-          font-size: $small;
-          margin: 0 0 3px 0;
-          color: $gray;
-
-          &:hover {
-            @extend .link;
-          }
-
-          &.active {
-            color: #3cc5b1;
-            
-            &:hover {
-              border-bottom: 1px solid #3cc5b1;
-            }
-          }
-        }
-      }
-
-      span {
-        display: block;
-      }
-
-      .title {
-        margin: 0 0 15px 0;
-      }
-
-      @media screen and (max-width: 639px) {
-        width: 0;
-        position: fixed;
-        z-index: 178;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: white;
-        overflow-x: hidden;
-        transition: 0.5s;
-
-        div {
-          margin: 10px auto 0;
-          width: 90%;
-          
-          span {
-            display: block;
-            transition: 0.3s;
-          }
-        }
-
-        &.open {
-          width: 200px;
-
-          i {
-            display: block;
-          }
-        }
-      }
-    }   
-
-    .sidebarTrans-enter-from, .sidebarTrans-leave-to {
-        opacity: 0;
-        transform: translateX(-300px);
-
-    }
-
-    .sidebarTrans-enter-active, .sidebarTrans-leave-active {
-        transition: opacity .7s ease, transform .7s ease;
-    } 
+    display: flex; 
 
     .videos_container {
       width: 83.33333333333334%;
@@ -276,6 +224,7 @@ span {
         i.gray {
           margin: 0 5px 0 0;
           display: none;
+          cursor: pointer;
 
           &:hover {
             color: $blue;
@@ -378,9 +327,11 @@ span {
         }
       }
 
-      @media screen and (max-width: 791px) {
-        .videos .video {
-          width: 100%;
+      @media screen and (max-width: 878px) {
+        width: 100%;
+
+        .left i.gray {
+          display: inline-block;
         }
       }
 
@@ -394,9 +345,22 @@ span {
         }
       }
 
-      @media screen and (max-width: 639px) {
-        .left i.gray {
-          display: inline-block;
+      @media screen and (max-width: 791px) {
+        .videos .video {
+          width: 48%;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .videos .video {
+          width: 47.5%;
+        }
+      }
+
+      @media screen and (max-width: 541px) {
+        .videos .video {
+          width: 100%;
+          margin-left: 0;
         }
       }
     }
