@@ -51,6 +51,8 @@ export default {
 
     props: ['isClosed', 'sidebarIsClosed'],
 
+    emits: ["close"],
+
     data() {
         return {
             logiciels: [

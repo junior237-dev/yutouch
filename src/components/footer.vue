@@ -73,23 +73,23 @@ export default {
             options: [
                 {
                     id: 1,
-                    img: 'drapeau_france',
-                    content: '<span> <img :src="require( `../assets/${this.img}.jpg`);" alt="Français">Cours en Français</span>'
+                    img: '../assets/drapeau_france.jpg',
+                    content: '<span> <img :src="require(`../assets/drapeau_france.jpg`)" alt="Français">Cours en Français</span>'
                 },
 
                 {
                     id: 2,
-                    img: 'drapeau_anglais',
-                    content: '<span> <img :src="require( `../assets/${this.img}.png`);" alt="Anglais">Cours en Anglais</span>'
+                    img: '../assets/drapeau_anglais.png',
+                    content: '<span> <img :src="getImgUrl" alt="Anglais">Cours en Anglais</span>'
                 }
             ]
         }
     },
 
     methods: {
-        /* getImgUrl(img) {
-            return require('../assets/' + img)
-        }, */
+        getImgUrl() {
+            return require('../assets/drapeau_france.jpg')
+        },
 
         select(option) {
             this.$refs.selected.innerHTML = option.content
