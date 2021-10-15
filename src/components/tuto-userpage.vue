@@ -23,6 +23,7 @@
                             <div class="filterdiv relative w-full h-10 bg-pink-600 rounded-md flex justify-between items-center" @click="showchoicefunction">
                                 <span class="fiterspan text-white inline-block pl-2">filtrer</span>
                                 <span class="arrowspan inline-block w-1 mr-3"></span>
+
                                 <transition name="transitionchoice">
                                     <span class="filterchoice absolute top-10 left-0 right-28 inline-block bg-gray-100 h-auto border shadow-md rounded-md" v-if="showchoice">
                                         <ul class="text-xs pl-2 leading-8">
@@ -30,6 +31,7 @@
                                         </ul>
                                     </span>
                                 </transition>
+                                
                             </div>
                         </div>
                     </div>

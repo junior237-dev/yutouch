@@ -4,26 +4,21 @@
             <ul class="sidebar pl-3">
                 <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300 active-menu"><router-link to="/page_utilisateur/accueil" class="flex items-center"><span class="block"><i class="material-icons">home</i></span><span class="block text-sm ml-2">Accueil</span></router-link></li>
                 <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="mes_tutos" class="flex items-center"><span class="block"><i class="material-icons">ondemand_video</i></span><span class="block text-sm ml-2">Mes tutos</span></router-link></li>
-                <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">school</i></span><span class="block text-sm ml-2">Parcours</span></li>
+                <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="parcours_pro" class="flex items-center"><span class="block"><i class="material-icons">school</i></span><span class="block text-sm ml-2">Parcours</span></router-link></li>
                 <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">notifications</i></span><span class="block text-sm ml-2">Notifications</span></li>
                 <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">favorite_border</i></span><span class="block text-sm ml-2">Favoris</span></li>
                 <li class="h-11 flex items-center text-gray-600 cursor-pointer hover:text-yellow-300"><span class="block"><i class="material-icons">person</i></span><span class="block text-sm ml-2">Profil</span></li>
             </ul>
         </div>
-        <parcours-u />
-        <!-- <router-view></router-view> -->
+        <router-view></router-view>
     </div>
 
     {{parcoursDOM()}}
 </template>
 
 <script>
-import parcoursU from "./parcours-userpage.vue"
 export default {
     name: "userpage",
-    components: {
-        parcoursU
-    },
     setup() {
         
         let parcoursDOM = function() {

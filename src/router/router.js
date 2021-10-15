@@ -6,6 +6,7 @@ import userPage from "../components/userpage.vue"
 import tutoUserpage from "../components/tuto-userpage.vue"
 import accueilUserpage from "../components/accueil-userpage.vue"
 import parcoursUserpage from "../components/parcours-userpage.vue"
+import notificationsUserpage from "../components/notifications-userpage.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
 import pageCategorie from "../components/page_categorie.vue"
@@ -42,9 +43,14 @@ const routes = [
                 component: tutoUserpage
             },
             {
-                name: "parcourrsPro",
+                name: "parcoursPro",
                 path: "parcours_pro",
                 component: parcoursUserpage
+            },
+            {
+                name: "notifications",
+                path: "notifications",
+                component: notificationsUserpage
             }
         ]
     },
