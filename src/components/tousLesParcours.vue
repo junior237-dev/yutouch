@@ -505,7 +505,7 @@ $blue: #00A9F0;
         margin: auto;
 
         img {
-            width: 150px;
+            width: 110px;
             margin: 0 0 0;
         }
     }
