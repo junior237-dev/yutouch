@@ -1,8 +1,8 @@
 <template>
   <div class="image_container">
-      <Header class="header"/>
       <img src="../assets/numeric.jpg" alt="Numeric">
       <div class="background">
+        <Header class="header"/>
         <div class="text_bloc">
             <h1 class="text-lg">Parcours de formation</h1>
             <h3 class="text-xl">Développez vos compétences dans les métiers du numérique aux côtées de nos meilleurs experts et offrez-vous de nouvelles opportunités</h3>
