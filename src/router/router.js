@@ -7,14 +7,16 @@ import tutoUserpage from "../components/tuto-userpage.vue"
 import accueilUserpage from "../components/accueil-userpage.vue"
 import parcoursUserpage from "../components/parcours-userpage.vue"
 import notificationsUserpage from "../components/notifications-userpage.vue"
+import favorisUserpage from "../components/favoris-userpage.vue"
+import profilUserpage from "../components/profil-userpage.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
 import pageCategorie from "../components/page_categorie.vue"
 
 const routes = [
     {
-        name: "accueil",
-        path:"/",
+        name: "home",
+        path: "/",
         component: home
     },
     {
@@ -32,6 +34,16 @@ const routes = [
         path: "/page_utilisateur",
         component: userPage,
         children: [
+            {
+                name: "profil",
+                path: "profil",
+                component: profilUserpage
+            },
+            {
+                name: "favoris",
+                path: "favoris",
+                component: favorisUserpage
+            },
             {
                 name: "accueil",
                 path: "accueil",

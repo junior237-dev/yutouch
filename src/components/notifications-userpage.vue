@@ -10,6 +10,7 @@
         </div>
         <div class="flux-echanges w-full pl-4 md:grid md:grid-cols-2">
             <h2 class="mx-auto w-5/6 md:w-52 md:text-2xl text-gray-600 text-xl">Flux d'échanges</h2>
+            
             <div class="flitergroup my-2 w-auto cursor-pointer">
                 <div class="filterdiv relative w-5/6 md:w-72 mx-auto h-10 bg-pink-600 rounded-md flex justify-between items-center" @click="showchoicefunction">
                     <span class="fiterspan text-white text-sm inline-block pl-2">{{choice[0]}}</span>

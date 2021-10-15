@@ -5,7 +5,7 @@
             <transition name="transitionpanel">
                 <formation-panel v-if="showpanel"/>
             </transition>
-            <li class="cursor-pointer"><a>Parcours  Pro</a></li>
+            <li class="cursor-pointer"><router-link to="">Parcours  Pro</router-link></li>
             <li class="cursor-pointer"><a>Promo</a></li>
             <li class="cursor-pointer rounded-full" @click='showsearchbarfunction'><i class="material-icons">search</i></li>
         </ul>

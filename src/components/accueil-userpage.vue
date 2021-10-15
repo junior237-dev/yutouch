@@ -24,7 +24,9 @@
             <div class="hello mt-5 text-2xl  text-center text-yellow-500">Bonjour {{user}} ! 👋</div>
             <div class="dashbord-elements w-4/5 mt-10 mx-auto">
                 <ul class="dashboard-element-range sm:w-2/3 sm:mx-auto grid grid-cols-3 gap-2">
-                    <li v-for="(item, indice) in dashboardElements" :key="indice"><span class="text-center h-8 w-8"><i class="material-icons inline-block w-4/5 mx-auto text-gray-500">{{item.iconName}}</i><br><span class="label inline-block text-gray-500 w-4/5 mx-auto">{{item.iconLabel}}</span></span></li>
+                    <li><router-link to="mes_tutos"><span class="text-center h-8 w-8"><i class="material-icons inline-block w-4/5 mx-auto text-gray-500">ondemand_video</i><br><span class="label inline-block text-gray-500 w-4/5 mx-auto">mes tuto</span></span></router-link></li>
+                    <li><router-link to="favoris"><span class="text-center h-8 w-8"><i class="material-icons inline-block w-4/5 mx-auto text-gray-500">favorite_border</i><br><span class="label inline-block text-gray-500 w-4/5 mx-auto">favoris</span></span></router-link></li>
+                    <li><span class="text-center h-8 w-8"><i class="material-icons inline-block w-4/5 mx-auto text-gray-500">mic_none</i><br><span class="label inline-block text-gray-500 w-4/5 mx-auto">publier un tuto</span></span></li>
                 </ul>
             </div>
         </div>
@@ -54,28 +56,27 @@ export default {
             status.value = e.currentTarget.innerHTML
             showstatuschoice.value = false
         },
-        showstatusfunction = function() {
+        showstatusfunction = function(e) {
             showstatuschoice.value = !showstatuschoice.value
-        },
-        dashboardElements = [
-            {
-                iconName: "ondemand_video",
-                iconLabel: "mes tutos"
-            },
-            {
-                iconName: "favorite_border",
-                iconLabel: "favoris"
-            },
-            {
-                iconName: "mic_none",
-                iconLabel: "Publier un tuto"
+            if (showstatuschoice.value === true) {
+
+                setTimeout(() => {
+                    let choices = document.querySelectorAll("ul.status-choice li")
+
+                    for(let i=0; i < choices.length; i++) {
+                        if(choices[i].innerText === e.target.innerText) {
+                            choices[i].classList.add("text-yellow-500")
+                        }
+                    }
+                    
+                }, 200)
+                
             }
-        ]
+        }
 
         return {
             user,
             status,
-            dashboardElements,
             showstatuschoice,
             showstatusfunction,
             changestatus
