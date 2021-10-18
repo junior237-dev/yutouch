@@ -9,8 +9,8 @@
               <li class="select_box">
                     <div class="options_container" ref="options_container">
 
-                        <div class="option" v-for="option in options" :key="option.id" @click="select(option)" v-html="option.content">
-
+                        <div class="option" v-for="option in options" :key="option.id" @click="select">
+                            <span> <img :src="require('../assets/' + option.img + '.jpg' )" :alt="option.alt">{{option.title}}</span>
                         </div>
 
                         <!-- 
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="selected" ref="selected" @click="toggleDropdown">
-                        <span> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span> 
+                        <span> <img src="../assets/drapeau_france.jpg" alt="Francais">Cours en Français</span> 
                         <!-- <i class="fas fa-caret-down" v-show="!isDown"></i> <i class="fas fa-caret-up" v-show="isDown"></i> -->
                     </div>
               </li>
@@ -73,14 +73,18 @@ export default {
             options: [
                 {
                     id: 1,
-                    img: '../assets/drapeau_france.jpg',
-                    content: '<span> <img :src="require(`../assets/drapeau_france.jpg`)" alt="Français">Cours en Français</span>'
+                    img: 'drapeau_france',
+                    alt: 'Français',
+                    title: 'Cours en Français',
+                    content: '<span> <img :src="require(`../assets/' + 'drapeau_france' + '.jpg`)" alt="Français">Cours en Français</span>'
                 },
 
                 {
                     id: 2,
-                    img: '../assets/drapeau_anglais.png',
-                    content: '<span> <img :src="getImgUrl" alt="Anglais">Cours en Anglais</span>'
+                    img: 'drapeau_anglais',
+                    alt: 'Anglais',
+                    title: 'Cours en Anglais',
+                    content: '<span> <img :src="require(`../assets/' + 'drapeau_anglais' + '.png`)" alt="Anglais">Cours en Anglais</span>'
                 }
             ]
         }
@@ -92,7 +96,7 @@ export default {
         },
 
         select(option) {
-            this.$refs.selected.innerHTML = option.content
+            this.$refs.selected.innerHTML = option.currentTarget.innerHTML
         },
 
         toggleDropdown() {
