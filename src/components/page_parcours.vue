@@ -130,16 +130,156 @@
 
         <div class="third">
           <h4>programme pdf</h4>
-          <img src="../assets/anonyme.jpg" alt="PROGRAMME PDF" class="cursor-pointer">
+          <img src="../assets/pdf.png" alt="PROGRAMME PDF" class="cursor-pointer">
         </div>
       </div>
     </div>
   </div>
+
+  <div class="before_footer">
+    <h1>Ils nous font confiance</h1>
+    <p>Plus de 5 000 professionnels et entreprises développent leurs compétences en utilisant tuto.com au quotidien. Nous sommes prestataire de formation agréé, enregistré sous le numéro 93 83 04618 83. Nous sommes référencés sur DATADOCK® et certifiés qualité Qualiopi® pour nos actions de formation, par BureauVeritas sous le n°FR056803-1</p>
+  
+    <div class="avis_commentaire">
+      <div class="avis">
+        <h2>Avis sur le centre de formation</h2>
+        <span class="h2">vérifiés par Pôle Emploi</span>
+
+        <div class="notes">
+          <div class="star_note"><span>4,2</span> /5 <i class="fas fa-star checked"></i></div>
+          <span>131 notes</span>
+        </div>
+
+        <div class="after_notes">
+          <div class="div">
+            <span>Accueil <i class="fas fa-question-circle"></i></span>
+            <div class="star">
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+            </div>
+          </div>
+          <div class="div">
+            <span>Contenu <i class="fas fa-question-circle"></i></span>
+            <div class="star">
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star"></i>
+              </div>
+          </div>
+          <div class="div">
+            <span>Formateurs <i class="fas fa-question-circle"></i></span>
+            <div class="star">
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="div">
+            <span>Matériels <i class="fas fa-question-circle"></i></span>
+            <div class="star">
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="div">
+            <span>Accompagnement <i class="fas fa-question-circle"></i></span>
+            <div class="star">
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="commentaire">
+        <div class="head">
+          <span class="h1">130 commentaires</span>
+          <div class="pagination">
+            <div> <i class='fas fa-angle-double-left'></i> </div>
+            <div> <i class='fas fa-angle-left'></i> </div>
+            <div> <span>page</span> <span>1/65</span> </div>
+            <div> <i class='fas fa-angle-right'></i> </div>
+            <div> <i class='fas fa-angle-double-right'></i> </div>
+          </div>
+        </div>
+
+        <div class="after_head">
+          <div class="first">
+            <div class="star">
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+              <i class="fas fa-star checked"></i>
+            </div>
+            <span>par <b>stagiaire</b></span>
+          </div>
+
+          <div class="second">
+            <i>Designer graphique + TOSA - 09/2021</i>
+          </div>
+        </div>
+
+        <div class="before_logo">
+          <div class="first">
+            <div class="one">
+              <div class="star">
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star checked"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span>par <b>stagiaire</b></span>
+            </div>
+
+            <div class="two">
+              <span class="h1">Formation Designer Graphique - TUTO.COM</span>
+              <span class="p">Formation à distance très enrichissante et intéressante pour ceux qui souhaitent s'orienter dans le design graphique. Je recommande à 100% le centre de formation Tuto.com pour les futurs apprenants.</span>
+            </div>
+          </div>
+
+          <div class="second">
+            <i class="far fa-comment"></i><b>Réponse de Tuto.com</b>
+            <div class="text">
+              Merci pour ce retour Content de voir qu'il a su répondre à vos besoins Nous vous souhaitons plein de réussite dans vos projets à venir.
+            </div>
+          </div>
+
+          <div class="third">
+            <i>Designer graphique + TOSA - 09/2021</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enterpriseLog">
+    <img src="../assets/startUp.png" alt="StartUp Academy">
+    <img src="../assets/jureEntrepreneur.png" alt="Cabinet Jure Entrepreneur">
+    <img src="../assets/eagleVision.png" alt="Eagle Vision">
+  </div>
+
+  <Footer />
 </template>
 
 <script>
 import HeadEtTabs from './headEtTabs.vue'
 import Image_container from './image_container.vue'
+import Footer from './footer.vue'
 export default {
     name: 'page_parcours',
 
@@ -177,7 +317,7 @@ export default {
       }
     },
 
-    components: { Image_container, HeadEtTabs },
+    components: { Image_container, HeadEtTabs, Footer },
 
     methods: {
       showDetails() {
@@ -357,13 +497,12 @@ $gray: #3F4348;
   }
 
   .form {
-    margin: 67px 0 0 0;
     display: flex;
-    margin: auto;
-    width: 50%;
+    margin: 67px auto 0;
+    width: 55%;
 
     .left {
-      margin: 0 90px 0 0;
+      margin: 0 50px 0 90px;
 
       label {
         display: block;
@@ -374,10 +513,11 @@ $gray: #3F4348;
 
       input {
         margin: 0 0 25px;
-        width: 250px;
+        width: 350px;
         height: 38px;
         color: #3F4348;
         padding: 10px;
+        border-radius: 3px;
       }
 
       button {
@@ -448,5 +588,240 @@ $gray: #3F4348;
       }
     }
   }
+}
+
+.before_footer {
+  padding: 70px 0 0 0;
+
+  h1 {
+    font-size: 30px;
+    color: #3F4348;
+    width: fit-content;
+    margin: auto;
+  }
+
+  p {
+    font-size: 20px;
+    color: #3F4348;
+    margin: 20px auto;
+    width: 65%;
+    text-align: center;
+  }
+
+  .avis_commentaire {
+    background-color: white;
+    padding: 20px 0 20px 0;
+    color: #3F4348;
+    display: flex;
+    width: 60%;
+    margin: auto;
+
+    .avis {
+      flex: 50%;
+      text-align: center;
+
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .notes {
+        margin: 18px auto;
+        width: 95%;
+        background-color: #F4F4F5;
+        padding: 20px;
+
+        .star_note {
+
+          span {
+            font-size: 35px;
+            font-weight: bold;
+          }
+
+          i {
+            font-size: 14px;
+            color: #FFD615;
+          }
+        }
+      }
+
+      .after_notes {
+        text-align: left;
+        width: 94%;
+        margin: auto;
+        color: #7F7F7F;
+
+        .div {
+          display: flex;
+          margin: 0 0 5px 0;
+          justify-content: space-between;
+
+          span i{
+            font-size: 14px;
+          }
+
+          .star {
+            i.checked {
+              color: #FFD615;
+            }
+          }
+        }
+      }      
+    }
+
+    .commentaire {
+      flex: 50%;
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 20px 0;
+        margin: 0 0 20px 0;
+        width: 95%;
+        margin: auto;
+        border-bottom: 1px solid #CCCCCC;
+
+        .h1 {
+          font-weight: bold;
+        }
+
+        .pagination {
+          display: flex;
+
+          span {
+            display: block;
+            line-height: 17px;
+          }
+
+          div {
+            margin: 0 0 0 10px;
+          }
+
+           div:nth-child(3) {
+             font-weight: bold;
+             text-transform: uppercase;
+             text-align: center;
+             font-size: 13px;
+           }
+
+          div:not(:nth-child(3)) {
+            padding: 6px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: #a3a3a3;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .after_head {
+        border: 1px solid #CCCCCC;
+        margin: 20px auto;
+        width: 95%;
+
+        .first {
+          display: flex;
+          padding: 5px 0 25px 20px;
+          border-bottom: 1px solid #CCCCCC;
+          background-color: #F4F4F5;
+
+          .star {
+            margin: 0 10px 0 0;
+
+            i.checked {
+              color: #FFD615;
+            }
+          }
+        }
+
+        .second {
+          padding: 10px 25px;
+        }
+      }
+
+      .before_logo {
+        border: 1px solid #CCCCCC;
+        width: 95%;
+        margin: auto;
+
+        .first {
+          background-color: #F4F4F5;
+          padding: 0 0 10px 0 ;
+
+          .one {
+            display: flex;
+            padding: 5px 0 0 20px;
+
+            .star {
+              margin: 0 10px 0 0;
+
+              i.checked {
+                color: #FFD615;
+              }
+            }
+          }
+
+          .two {
+            margin: 17px 0 0 20px;
+            
+            span {
+              display: block;
+            }
+            .h1 {
+              font-weight: bold;
+              margin: 0 0 10px 0;
+            }
+          }
+        }
+
+        .second {
+          padding: 13px 0 15px 20px;
+          border-bottom: 1px solid #CCCCCC;
+
+          i {
+            margin: 0 5px 0 0;
+          }
+
+          .text {
+            border-left: 1px solid #a7a6a6;
+            padding: 0 0 0 15px;
+            margin: 10px 0 0 0;
+          }
+        }
+
+        .third {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
+
+.enterpriseLog {
+    padding: 150px;
+    display: flex;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+
+    img {
+      width: 210px;
+      margin: 0 0 0;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .enterpriseLog {
+        flex-direction: column;
+
+        img {
+            margin: 0 0 15px 0;
+        }
+    }
 }
 </style>
