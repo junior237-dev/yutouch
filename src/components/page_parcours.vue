@@ -713,6 +713,7 @@ $gray: #3F4348;
             text-align: center;
             color: #a3a3a3;
             font-size: 12px;
+            cursor: pointer;
           }
         }
       }
@@ -813,15 +814,13 @@ $gray: #3F4348;
       width: 210px;
       margin: 0 0 0;
     }
-}
 
-@media screen and (max-width: 510px) {
-    .enterpriseLog {
-        flex-direction: column;
+    @media screen and (max-width: 510px) {
+      flex-direction: column;
 
-        img {
-            margin: 0 0 15px 0;
-        }
+      img {
+        margin: 0 0 15px 0;
+      }
     }
 }
 </style>

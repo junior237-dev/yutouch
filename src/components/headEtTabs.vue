@@ -63,6 +63,12 @@ $blue: #00A9F0;
             padding: 2px 9px;
             font-size: 15px;
             color: #AFB5BA;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #00A9F0;
+                color: white;
+            }
         }
 
         .active {
@@ -113,6 +119,12 @@ $blue: #00A9F0;
             padding: 2px 9px;
             font-size: 15px;
             color: #AFB5BA;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #00A9F0;
+                color: white;
+            }
         }
 
         .active {
