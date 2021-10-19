@@ -10,7 +10,7 @@
     </div>
 
     <div class="body">
-<<<<<<< HEAD
+      
       <transition name="sidebarTrans">
         <div class="sidebar" ref="sidebar">
           <i class="fas fa-minus-circle" @click="closeSideBar"></i>
@@ -31,9 +31,9 @@
           </div>
         </div>
       </transition>
-=======
+
       <Sidebar @close="toggleSidebar" :isClosed="isClosed" :sidebarIsClosed="sidebarIsClosed"/>
->>>>>>> ba8cba75e42e580c7d4790cffc7e44c4a7335ad5
+
 
       <div class="videos_container">
         <div class="head">
@@ -94,14 +94,11 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import categoryElement from './category-element.vue'
-=======
-import Footer from './footer.vue'
-import Header from './header.vue'
-import Sidebar from './sidebar.vue'
+// import Footer from './footer.vue'
+// import Header from './header.vue'
+// import Sidebar from './sidebar.vue'
 
->>>>>>> ba8cba75e42e580c7d4790cffc7e44c4a7335ad5
 export default {
   components: { categoryElement },
 name: 'page_categorie',
@@ -125,18 +122,18 @@ let logiciels= [
       'Viadeo'
     ]
     return {
-<<<<<<< HEAD
       logiciels
     }
   },
-=======
-      open: false,
-      isClosed: null,
-      sidebarIsClosed: null
-    }
+    
+  data() { 
+      return {
+        open: false,
+        isClosed: null,
+        sidebarIsClosed: null
+      }
   },
-  
-  components: { Footer, Header, Sidebar },
+  // components: { Footer, Header, Sidebar },
 
   created() {
     window.addEventListener('resize', this.checkScreen);
@@ -144,7 +141,6 @@ let logiciels= [
     this.checkScreen()
     this.checkScreenAgain()
   },
->>>>>>> ba8cba75e42e580c7d4790cffc7e44c4a7335ad5
 
   methods: {
     toggleSidebar() {
