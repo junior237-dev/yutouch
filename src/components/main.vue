@@ -3,7 +3,8 @@
         <!-- <userpage /> -->
         <!-- <connexion /> -->
         <!-- <page-formation /> -->
-        <page-categorie />
+        <!-- <page-categorie /> -->
+        <tous-les-parcours />
         <!-- <inscription /> -->
         <!-- <principal-banner />
         <container-category-origin />
@@ -23,11 +24,13 @@
 // import containerCategoryOrigin from "./container-category-origin.vue"
 // import containerCategorySecond from "./container-category-second.vue"
 // import bannerFooter from "./banner-footer.vue"
-import pageCategorie from './page_categorie.vue'
+// import pageCategorie from './page_categorie.vue'
+import TousLesParcours from './tousLesParcours.vue'
 export default {
     name: 'mainVuejs',
     components: {
-        pageCategorie
+        // pageCategorie,
+        TousLesParcours
         // touslesparcours
         // userpage
         // connexion

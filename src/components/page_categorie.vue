@@ -2,7 +2,7 @@
   <div class="page_categorie">
     <div class="location small">
       <span>Vous êtes ici : </span>
-      <span class="link">Accueil</span>
+      <span class="link">Accueil </span>
       <span> > </span>
       <span class="link">Formation</span>
       <span> > </span>
@@ -10,30 +10,7 @@
     </div>
 
     <div class="body">
-      
-      <transition name="sidebarTrans">
-        <div class="sidebar" ref="sidebar">
-          <i class="fas fa-minus-circle" @click="closeSideBar"></i>
-          <div class="web">
-            <span class="title">Web</span>
-            <span>Toutes</span>
-            <span class="active">Tuto Web gratuits</span>
-            <span>Formation A à Z Web</span>
-            <span>Tuto Web en promo</span>
-          </div>
-          <div class="themes">
-            <span class="title">Thèmes</span>
-            <span>Transformation digitale</span>
-          </div>
-          <div class="logiciels">
-            <span class="title">Logiciels</span>
-            <span v-for="logiciel in logiciels" :key="logiciel">{{logiciel}}</span>
-          </div>
-        </div>
-      </transition>
-
-      <Sidebar @close="toggleSidebar" :isClosed="isClosed" :sidebarIsClosed="sidebarIsClosed"/>
-
+      <sidebar @close="toggleSidebar" :isClosed="isClosed" :sidebarIsClosed="sidebarIsClosed"/>
 
       <div class="videos_container">
         <div class="head">
@@ -42,6 +19,7 @@
             <span class="title">331 tuto Web</span>
             <span class="small"><i>(plus d'infos)</i> </span>
           </div>
+
           <div class="right">
             <span class="active">les + populaires</span>
             <span> / </span>
@@ -53,7 +31,19 @@
 
         <div class="videos">
           <div class="video" v-for="i in 12" :key="i">
-            <category-element />
+              <div class="video_img">
+                  <img class="formation" src="../assets/formation.png" alt="Formation">
+                  <img class="formateur" src="../assets/cover2.jpg" alt="Formateur">
+              </div>
+              <div class="info">Les possibilités insoupçconnées des calques courbes de transfert de dégradé dans photoshop CC</div>
+              <div class="autor gray"> de <span class="blue">Pascal Gauch</span> - Durée : 23m49s</div>
+              <div class="star">
+                  <i class="fas fa-star checked"></i>
+                  <i class="fas fa-star checked"></i>
+                  <i class="fas fa-star checked"></i>
+                  <i class="fas fa-star checked"></i>
+                  <i class="fas fa-star"></i>
+              </div>
           </div>
         </div>
       </div>
@@ -94,46 +84,17 @@
 </template>
 
 <script>
-import categoryElement from './category-element.vue'
-// import Footer from './footer.vue'
-// import Header from './header.vue'
-// import Sidebar from './sidebar.vue'
-
+import sidebar from './sidebar.vue'
 export default {
-  components: { categoryElement },
-name: 'page_categorie',
-setup() {
-let logiciels= [
-      'WordPress',
-      'Jomia',
-      'Dreamweaver',
-      'Google',
-      'Cloud',
-      'Elementor',
-      'Internet',
-      'WIX',
-      'Drupal',
-      'Contribute',
-      'Dotclear',
-      'IWeb',
-      'Magneto',
-      'iWeb',
-      'Spip',
-      'Viadeo'
-    ]
+  name: 'page_categorie',
+  components: {sidebar},
+  data() {
     return {
-      logiciels
+      open: false,
+      isClosed: null,
+      sidebarIsClosed: null
     }
   },
-    
-  data() { 
-      return {
-        open: false,
-        isClosed: null,
-        sidebarIsClosed: null
-      }
-  },
-  // components: { Footer, Header, Sidebar },
 
   created() {
     window.addEventListener('resize', this.checkScreen);
@@ -288,12 +249,12 @@ span {
           }
 
           .autor {
-            font-size: 14px;
-            margin: 0 0 5px 0;
+              font-size: 14px;
+              margin: 0 0 5px 0;
           }
 
           .star .checked {
-            color: #ffc241;
+              color: #ffc241;
           }
         }
       }
