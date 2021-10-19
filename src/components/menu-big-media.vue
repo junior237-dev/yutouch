@@ -1,16 +1,16 @@
 <template>
     <div class="menu-big-media w-5/6 h-auto my-5 hidden lg:flex lg:justify-between relative">
         <ul class="first-part w-1/2 flex justify-between text-white text-sm font-light mr-9">
-            <li class="cursor-pointer flex items-center" @click='showformationpanel'><a>Formations</a><i class="material-icons tiny">arrow_drop_down</i></li>
+            <li class="formations-li cursor-pointer flex items-center">Formations<i class="arrow_drop_down-formation material-icons tiny">arrow_drop_down</i></li>
             <transition name="transitionpanel">
-                <formation-panel v-if="showpanel"/>
+                <formation-panel v-if="showpanel" @resetmenu="showformationpanel"/>
             </transition>
             <li class="cursor-pointer"><router-link to="">Parcours  Pro</router-link></li>
             <li class="cursor-pointer"><a>Promo</a></li>
-            <li class="cursor-pointer rounded-full" @click='showsearchbarfunction'><i class="material-icons">search</i></li>
+            <li class="cursor-pointer rounded-full"><i class="search-icon material-icons">search</i></li>
         </ul>
         <ul class="second-part w-1/2 flex justify-around text-white text-sm font-light ml-3 mr-8 relative">
-            <li class="cursor-pointer flex items-center"  @click='showhelpfunction'>Aide<i class="material-icons tiny">arrow_drop_down</i></li>
+            <li class="help-li cursor-pointer flex items-center">Aide<i class="arrow_drop_down-help material-icons tiny">arrow_drop_down</i></li>
             <transition name="transitionhelp">
                 <help v-if="showhelp" class="text-black absolute top-8 -left-16"/>
             </transition>
@@ -20,6 +20,7 @@
         <transition name="transitionsearchbar">
             <searchbar v-if="showsearchbar" class="text-black"/>
         </transition>
+        {{lookatThistemplate()}}
     </div>
 </template>
 
@@ -45,18 +46,49 @@ export default {
             showpanel.value = false
             showhelp.value = false
         },
-        showformationpanel = function(e) {
+        showformationpanel = function() {
             showpanel.value = !showpanel.value
             showsearchbar.value = false
             showhelp.value = false
+        },
+        lookatThistemplate = function() {
+            setTimeout(()=>{
+                document.querySelector("nav.header_bar").addEventListener("click", function(e) {
+                    
+                    if (e.target.classList.contains("formations-li") || e.target.classList.contains("arrow_drop_down-formation")) {
+                        showformationpanel()
+                    } else if(e.target.classList.contains("search-icon")) {
+                        showsearchbarfunction()
+                    } else if(e.target.classList.contains("arrow_drop_down-help") || e.target.classList.contains("help-li")) {
+                        showhelpfunction()
+                    } else {
+                        showhelp.value = false
+                        showsearchbar.value = false
+                        showpanel.value = false
+                        console.log(e.target)
+                        return 
+                    }
+                    
+                    // console.log(e.target)
+                })
 
-            console.log(e.currentTarget)
+                document.querySelector("div.main").addEventListener("click", function(e) {
+                    showhelp.value = false
+                    showsearchbar.value = false
+                    showpanel.value = false
+                    console.log(e.target)
+                    return
+                })
+                
+            }, 100)
+           
         }
 
         return {
             showhelp,
             showpanel,
             showsearchbar,
+            lookatThistemplate,
             showhelpfunction,
             showformationpanel,
             showsearchbarfunction

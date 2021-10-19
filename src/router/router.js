@@ -8,7 +8,9 @@ import accueilUserpage from "../components/accueil-userpage.vue"
 import parcoursUserpage from "../components/parcours-userpage.vue"
 import notificationsUserpage from "../components/notifications-userpage.vue"
 import favorisUserpage from "../components/favoris-userpage.vue"
+import gestionAlerte from "../components/gestionAlert.vue"
 import profilUserpage from "../components/profil-userpage.vue"
+import infoPerso from "../components/profilComponent.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
 import pageCategorie from "../components/page_categorie.vue"
@@ -37,7 +39,19 @@ const routes = [
             {
                 name: "profil",
                 path: "profil",
-                component: profilUserpage
+                component: profilUserpage,
+                children: [
+                    {
+                        name: "informations_personnelles",
+                        path: "informations_personnelles",
+                        component: infoPerso
+                    },
+                    {
+                        name: "gestionAlerte",
+                        path: "gestion_alerte",
+                        component: gestionAlerte
+                    }
+                ]
             },
             {
                 name: "favoris",

@@ -49,7 +49,7 @@
 
         <div class="videos">
           <div class="video" v-for="i in 12" :key="i">
-            <category-element />
+            <router-link :to="'/page_formation'" ><category-element /></router-link>
           </div>
         </div>
       </div>

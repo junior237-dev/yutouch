@@ -11,7 +11,7 @@
             <div class="thematiques text-left">
                 <h2 class="font-semibold text-gray-800 text-xs mb-3">COURS POPULAIRES</h2>
                 <ul class="thematic-elements grid grid-cols-1 w-auto">
-                    <li class="leading-6 text-xs w-40 text-gray-600 font-light  cursor-pointer hover:text-yellow-600" v-for="(item, index) in popularLesson" :key="index">{{item}}</li>
+                    <li class="leading-6 text-xs w-40 text-gray-600 font-light  cursor-pointer hover:text-yellow-600" v-for="(item, index) in popularLesson" :key="index"><router-link to="/page_categorie" @click="menureset">{{item}}</router-link></li>
                 </ul>
                 <a href="" class="text-xs text-blue-500 mt-3">voir tous les cours populaires</a>
             </div>
@@ -74,17 +74,19 @@ export default {
             'Graphiste Photoshop',
             'Responsable Marketing',
             'Digital'
-        ],
-        menureset = function() {
-            
-        }
+        ]
+
         return {
             proCourse,
             popularLesson,
             themElements,
-            menureset
         }
     },
+    methods: {
+        menureset() {
+            this.$emit("resetmenu")
+        }
+    }
 }
 </script>
 
