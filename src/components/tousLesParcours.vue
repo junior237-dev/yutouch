@@ -1,23 +1,7 @@
 <template>
-    <Image_container img="numeric" alt="Numeric" :heading1="heading1" :heading3="heading3" :btn="btn" />
+    <Image_container img="numeric" alt="Numeric" :heading1="heading1" :heading3="heading3" :btn="btn" component="tousLesParcours"/>
 
-    <div class="head">
-      <h1>Nos parcours</h1>
-      <h3>Nos parcours peuvent être pris en charge par votre CPF, votre OPCO ou par Pôle Emploi</h3>
-    </div>
-
-    <div class="tabs">
-        <div class="active">Tous</div>
-        <div>éligible cpf</div>
-        <div>vidéo</div>
-        <div>graphisme</div>
-        <div>photo</div>
-        <div>bureautique</div>
-        <div>programmation</div>
-        <div>marketing digital</div>
-        <div>3d</div>
-        <div>sytemes et reseaux</div>
-    </div>
+    <HeadEtTabs :h3="h3" h1="Nos parcours" :tabs="tabs" component="tousLesParcours"/>
 
     <div class="cards">
         <div class="card" @mouseenter="toggleVisibility" @mouseleave="toggleVisibility" v-for="i in 11" :key="i" title="Formation Motion Designer">
@@ -52,9 +36,10 @@
 
 <script>
 import Footer from './footer.vue'
+import HeadEtTabs from './headEtTabs.vue'
 import Image_container from './image_container.vue'
 export default {
-  components: { Footer, Image_container },
+    components: { Footer, Image_container, HeadEtTabs },
     name: 'tousLesParcours',
 
     data() {
@@ -62,7 +47,24 @@ export default {
             visible: false,
             heading1: 'Parcours de formation',
             heading3: 'Développez vos compétences dans les métiers du numérique aux côtées de nos meilleurs experts et offrez-vous de nouvelles opportunités',
-            btn: 'Parler à un conseiller'
+            btn: 'Parler à un conseiller',
+
+            h3:'Nos parcours peuvent être pris en charge par votre CPF, votre OPCO ou par Pôle Emploi',
+
+            component:"tousLesParcours",
+
+            tabs: [
+                {tab: 'Tous', active: true}, 
+                {tab: 'éligible cpf', active: false}, 
+                {tab: 'vidéo', active: false}, 
+                {tab: 'graphisme', active: false}, 
+                {tab: 'photo', active: false}, 
+                {tab: 'bureautique', active: false}, 
+                {tab: 'programmation', active: false}, 
+                {tab: 'marketing digital', active: false}, 
+                {tab: '3d', active: false}, 
+                {tab: 'sytemes et reseaux', active: false}
+            ]
         }
     },
 
@@ -79,51 +81,6 @@ export default {
 <style lang="scss" scoped>
 $gray: #AFB5BA;
 $blue: #00A9F0;
-
-.head {
-    width: fit-content;
-    margin: auto;
-    margin-top: 45px;
-    margin-bottom: 45px;
-    text-align: center;
-    color: #3F4348;
-
-    h1 {
-        color: #3F4348;
-        font-size: 30px;
-        margin-bottom: 15px;
-    }
-
-    h3 {
-        font-size: 20px;
-        padding: 0 2% 0;
-    }
-
-}
-
-.tabs {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-
-    div {
-        width: fit-content;
-        margin: 0 10px 30px;
-        display: inline-block;
-        text-transform: uppercase;
-        border: 1px solid #AFB5BA;
-        background-color: white;
-        border-radius: 5px;
-        padding: 2px 9px;
-        font-size: 15px;
-        color: #AFB5BA;
-    }
-
-    .active {
-        background-color: #00A9F0;
-        color: white;
-    }
-}
 
 .cards {
     width: 92%;
