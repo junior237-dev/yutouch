@@ -275,7 +275,7 @@ span {
         }
       }
 
-      @media screen and (max-width: 1159px) {
+      @media screen and (max-width: 1179px) {
         .videos .video {
           width: 31.9%;
         }
@@ -287,7 +287,7 @@ span {
         }
       }
 
-      @media screen and (max-width: 972px) {
+      @media screen and (max-width: 980px) {
         .videos .video {
           width: 48%;
         }
