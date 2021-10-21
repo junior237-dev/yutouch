@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import promo from "../components/promotion.vue"
 import home from "../components/home.vue"
 import pageFormation from "../components/page_formation.vue"
 import userPage from "../components/userpage.vue"
@@ -10,7 +11,9 @@ import notificationsUserpage from "../components/notifications-userpage.vue"
 import favorisUserpage from "../components/favoris-userpage.vue"
 import gestionAlerte from "../components/gestionAlert.vue"
 import profilUserpage from "../components/profil-userpage.vue"
-import infoPerso from "../components/profilComponent.vue"
+import profil from "../components/profilcomponent.vue"
+import pageParcours from "../components/tousLesParcours.vue"
+import infoPerso from "../components/infoPerso.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
 import pageCategorie from "../components/page_categorie.vue"
@@ -27,30 +30,48 @@ const routes = [
         component: pageCategorie
     },
     {
+        name: "page de promotions",
+        path: "/page_promotions",
+        component: promo
+    },
+    {
         name: "page des formations",
         path: "/page_formation",
         component: pageFormation
     },
     {
+        name: "page des parcours pro",
+        path: "/parcours_pro",
+        component: pageParcours
+    },
+    {
         name: "page utilisateur",
-        path: "/page_utilisateur",
+        path: "/page_utilisateur/",
         component: userPage,
         children: [
             {
-                name: "profil",
-                path: "profil",
+                name: "profil_page",
+                path: "profil_utilisateur",
                 component: profilUserpage,
                 children: [
                     {
-                        name: "informations_personnelles",
-                        path: "informations_personnelles",
-                        component: infoPerso
+                        name: "profil",
+                        path: "profil",
+                        component: profil,
+                        children: [
+                            {
+                                name: "informations_personnelles",
+                                path: "informations_personnelles",
+                                component: infoPerso
+                            },
+                            {
+                                name: "gestionAlerte",
+                                path: "gestion_alerte",
+                                component: gestionAlerte
+                            }
+                        ]
                     },
-                    {
-                        name: "gestionAlerte",
-                        path: "gestion_alerte",
-                        component: gestionAlerte
-                    }
+                    
                 ]
             },
             {

@@ -5,8 +5,8 @@
             <transition name="transitionpanel">
                 <formation-panel v-if="showpanel" @resetmenu="showformationpanel"/>
             </transition>
-            <li class="cursor-pointer"><router-link to="">Parcours  Pro</router-link></li>
-            <li class="cursor-pointer"><a>Promo</a></li>
+            <li class="cursor-pointer"><router-link to="/parcours_pro">Parcours  Pro</router-link></li>
+            <li class="cursor-pointer"><router-link to="/page_promotions">Promo</router-link></li>
             <li class="cursor-pointer rounded-full"><i class="search-icon material-icons">search</i></li>
         </ul>
         <ul class="second-part w-1/2 flex justify-around text-white text-sm font-light ml-3 mr-8 relative">
@@ -65,18 +65,17 @@ export default {
                         showhelp.value = false
                         showsearchbar.value = false
                         showpanel.value = false
-                        console.log(e.target)
+        
                         return 
                     }
                     
-                    // console.log(e.target)
                 })
 
-                document.querySelector("div.main").addEventListener("click", function(e) {
+                document.querySelector("div.main").addEventListener("click", function() {
                     showhelp.value = false
                     showsearchbar.value = false
                     showpanel.value = false
-                    console.log(e.target)
+                    
                     return
                 })
                 

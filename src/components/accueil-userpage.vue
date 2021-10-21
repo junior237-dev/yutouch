@@ -6,9 +6,9 @@
                 <span class="apprenant-formateur text-base font-light text-gray-600 cursor-pointer">{{status}}</span>
             </div>
             <transition name="transitionStatusChoice">
-                <ul class="status-choice top-20 absolute left-0 right-0 bg-white" v-if="showstatuschoice">
-                    <li class="first-choice border-b pl-4 text-base font-light" @click="changestatus">Accès Apprenant</li>
-                    <li class="second-choice border-b pl-4 text-base font-light" @click="changestatus">Accès Formateur</li>
+                <ul class="status-choice top-20 absolute left-0 right-0 bg-white md:right-96" v-if="showstatuschoice">
+                    <li class="first-choice border-b pl-4 text-base font-light cursor-pointer" @click="changestatus">Accès Apprenant</li>
+                    <li class="second-choice border-b pl-4 text-base font-light cursor-pointer" @click="changestatus">Accès Formateur</li>
                 </ul>
             </transition>
         </div> 

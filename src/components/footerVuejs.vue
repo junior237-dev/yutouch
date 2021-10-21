@@ -8,19 +8,16 @@
               <li>Nous recutons</li>
               <li class="select_box">
                     <div class="options_container" ref="options_container">
-<!-- <<<<<<< HEAD:src/components/footerVuejs.vue
-                        <div class="option" ref="option">
-                            <span ref="optio"> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span>
-                        </div>
-                        <div class="option" ref="option">
-                            <span ref="optio"> <img src="../assets/drapeau_anglais.png" alt="">Cours en Anglais</span>
-======= -->
                         <div class="option" v-for="option in options" :key="option.id">
                             <span ref="optio"> <img src="../assets/drapeau_france.jpg" :alt="option.alt">{{option.langue}}</span>
                         </div>
+                        <div class="option" v-for="option in options" :key="option.id" @click="select">
+                            <span> <img :src="require('../assets/' + option.img + '.jpg' )" :alt="option.alt">{{option.title}}</span>
+                        </div>
                     </div>
                     <div class="selected" ref="selected" @click="toggleDropdown">
-                        <span> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span> 
+                        <span> <img src="../assets/drapeau_france.jpg" alt="Francais">Cours en Français</span> 
+                        <!-- <i class="fas fa-caret-down" v-show="!isDown"></i> <i class="fas fa-caret-up" v-show="isDown"></i> -->
                     </div>
               </li>
           </ul>
@@ -64,14 +61,16 @@ export default {
                 img: '../assets/drapeau_france.jpg',
                 id: 1,
                 alt: 'France',
-                langue: 'Cours en Français'
+                langue: 'Cours en Français',
+                content: '<span> <img :src="require(`../assets/' + 'drapeau_france' + '.jpg`)" alt="Français">Cours en Français</span>'
             },
 
             {
                 img: '../assets/drapeau_anglais.png',
                 id: 2,
                 alt: 'Anglais',
-                langue: 'Cours en Anglais'
+                langue: 'Cours en Anglais',
+                content: '<span> <img :src="require(`../assets/' + 'drapeau_anglais' + '.png`)" alt="Anglais">Cours en Anglais</span>'
             }
         ]
         return {
@@ -81,33 +80,16 @@ export default {
     },
 
     methods: {
+        getImgUrl() {
+            return require('../assets/drapeau_france.jpg')
+        },
+
+        select(option) {
+            this.$refs.selected.innerHTML = option.currentTarget.innerHTML
+        },
+
         toggleDropdown() {
-            // const selected = this.$refs.selected;
-            const optionsContainer = this.$refs.options_container;
-            // const optionsList = this.$refs.options_container.children;
-
-            optionsContainer.classList.toggle('active')
-
-            /* for(var i = 0; i <= optionsList.length ; i++) {
-                optionsList[i].addEventListener('click', () => {
-                    console.log(optionsList[i])
-                }) 
-            } */
-
-            /* $.each(optionsList, function(key, value) {
-                list.push(key);
-            }); */
-
-            /* optionsList.filter( function (value, key) {
-                console.log(key, value)
-            }) */
-
-            /* optionsList.forEach( o => {
-                o.addEventListener('click', () => {
-                    selected.innerHTML = o.$refs.optio.innerHTML;
-                    optionsContainer.classList.remove('active')
-                })
-            }); */
+            this.$refs.options_container.classList.toggle('active')
         }
     }
 }

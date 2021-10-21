@@ -2,7 +2,7 @@
   <div class="page_categorie">
     <div class="location small">
       <span>Vous êtes ici : </span>
-      <span class="link">Accueil</span>
+      <span class="link">Accueil </span>
       <span> > </span>
       <span class="link">Formation</span>
       <span> > </span>
@@ -10,34 +10,16 @@
     </div>
 
     <div class="body">
-      <transition name="sidebarTrans">
-        <div class="sidebar" ref="sidebar">
-          <i class="fas fa-minus-circle" @click="closeSideBar"></i>
-          <div class="web">
-            <span class="title">Web</span>
-            <span>Toutes</span>
-            <span class="active">Tuto Web gratuits</span>
-            <span>Formation A à Z Web</span>
-            <span>Tuto Web en promo</span>
-          </div>
-          <div class="themes">
-            <span class="title">Thèmes</span>
-            <span>Transformation digitale</span>
-          </div>
-          <div class="logiciels">
-            <span class="title">Logiciels</span>
-            <span v-for="logiciel in logiciels" :key="logiciel">{{logiciel}}</span>
-          </div>
-        </div>
-      </transition>
+      <sidebar @close="toggleSidebar" :isClosed="isClosed" :sidebarIsClosed="sidebarIsClosed" :blocks="blocks"/>
 
       <div class="videos_container">
         <div class="head">
           <div class="left">
-            <i class="fas fa-plus-circle gray" @click="openSideBar"></i> 
+            <i class="fas fa-plus-circle gray" v-show="isClosed" @click="toggleSidebar"></i> 
             <span class="title">331 tuto Web</span>
             <span class="small"><i>(plus d'infos)</i> </span>
           </div>
+
           <div class="right">
             <span class="active">les + populaires</span>
             <span> / </span>
@@ -90,43 +72,151 @@
 </template>
 
 <script>
-import categoryElement from './category-element.vue'
+import categoryElement from "./category-element.vue"
+import sidebar from './sidebar.vue'
 export default {
-  components: { categoryElement },
-name: 'page_categorie',
-setup() {
-let logiciels= [
-      'WordPress',
-      'Jomia',
-      'Dreamweaver',
-      'Google',
-      'Cloud',
-      'Elementor',
-      'Internet',
-      'WIX',
-      'Drupal',
-      'Contribute',
-      'Dotclear',
-      'IWeb',
-      'Magneto',
-      'iWeb',
-      'Spip',
-      'Viadeo'
+  name: 'page_categorie',
+  components: {sidebar, categoryElement},
+  setup() {
+    let blocks = [
+      {
+        divBlock: ['web'],
+        titleBlock: 'Web',
+        links: [
+            {
+                name: 'toutes',
+                link: ''
+            },
+            {
+                name: 'Tuto web gratuits',
+                link: ''
+            },
+            {
+                name: 'Formation A à Z Web',
+                link: ''
+            },
+            {
+                name: 'Tuto Web en promo',
+                link: ''
+            }
+        ]
+      },
+      {
+        divBlock: ['themes'],
+        titleBlock: 'Thèmes',
+        links: [
+            {
+                name: 'Transformation digitale',
+                link: ''
+            }
+        ]
+      },
+      {
+        divBlock: ['logiciels'],
+        titleBlock: 'Logiciels',
+        links: [
+            {
+                name: 'WordPress',
+                link: ''
+            },
+            {
+                name: 'Jomia',
+                link: ''
+            },
+            {
+                name: 'Dreamweaver',
+                link: ''
+            },
+            {
+                name: 'Google',
+                link: ''
+            },
+            {
+                name: 'Cloud',
+                link: ''
+            },
+            {
+                name: 'Elementor',
+                link: ''
+            },
+            {
+                name: 'Internet',
+                link: ''
+            },
+            {
+                name: 'WIX',
+                link: ''
+            },
+            {
+                name: 'Drupal',
+                link: ''
+            },
+            {
+                name: 'Contribute',
+                link: ''
+            },
+            {
+                name: 'Dotclear',
+                link: ''
+            },
+            {
+                name: 'IWeb',
+                link: ''
+            },
+            {
+                name: 'Magneto',
+                link: ''
+            },
+            {
+                name: 'Viadeo',
+                link: ''
+            }
+        ]
+      }
+      
+
     ]
     return {
-      logiciels
+      blocks
+    }
+  },
+  data() {
+    return {
+      open: false,
+      isClosed: null,
+      sidebarIsClosed: null
     }
   },
 
+  created() {
+    window.addEventListener('resize', this.checkScreen);
+    window.addEventListener('resize', this.checkScreenAgain);
+    this.checkScreen()
+    this.checkScreenAgain()
+  },
+
   methods: {
-    openSideBar() {
-      this.open = true
-      this.$refs.sidebar.classList.add('open')
+    toggleSidebar() {
+      this.sidebarIsClosed = !this.sidebarIsClosed
+      console.log(this.sidebarIsClosed + ' 2')
     },
 
-    closeSideBar() {
-      this.open = false
-      this.$refs.sidebar.classList.remove('open')
+    checkScreen() {
+      this.windowWidth= window.innerWidth;
+      if (this.windowWidth <= 878) {
+          this.isClosed = true;
+          return
+      }
+      this.isClosed = false
+      return
+    },
+
+    checkScreenAgain() {
+      this.windowWidth2= window.innerWidth;
+      if (this.windowWidth2 >= 878) {
+          this.sidebarIsClosed = false;
+          return
+      }
     }
   }
 }
@@ -259,6 +349,7 @@ span {
     .sidebarTrans-enter-active, .sidebarTrans-leave-active {
         transition: opacity .7s ease, transform .7s ease;
     } 
+    display: flex; 
 
     .videos_container {
       width: 83.33333333333334%;
@@ -274,6 +365,7 @@ span {
         i.gray {
           margin: 0 5px 0 0;
           display: none;
+          cursor: pointer;
 
           &:hover {
             color: $blue;
@@ -341,12 +433,12 @@ span {
           }
 
           .autor {
-            font-size: 14px;
-            margin: 0 0 5px 0;
+              font-size: 14px;
+              margin: 0 0 5px 0;
           }
 
           .star .checked {
-            color: #ffc241;
+              color: #ffc241;
           }
         }
       }
@@ -376,9 +468,11 @@ span {
         }
       }
 
-      @media screen and (max-width: 791px) {
-        .videos .video {
-          width: 100%;
+      @media screen and (max-width: 878px) {
+        width: 100%;
+
+        .left i.gray {
+          display: inline-block;
         }
       }
 
@@ -392,9 +486,22 @@ span {
         }
       }
 
-      @media screen and (max-width: 639px) {
-        .left i.gray {
-          display: inline-block;
+      @media screen and (max-width: 791px) {
+        .videos .video {
+          width: 48%;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .videos .video {
+          width: 47.5%;
+        }
+      }
+
+      @media screen and (max-width: 541px) {
+        .videos .video {
+          width: 100%;
+          margin-left: 0;
         }
       }
     }

@@ -34,7 +34,7 @@
                                 </ul>
                             </div>
                         </div>
-                    <li id="parcours_pro" class="p-item cursor-pointer">Parcours Pro</li>
+                    <li id="parcours_pro" class="p-item cursor-pointer"><router-link to="/parcours_pro" @click="menureset">Parcours Pro</router-link></li>
                     <li id="promos" class="p-item cursor-pointer">Promos</li>
                     <li id="aide" class="p-item cursor-pointer">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
                     <li id="connexion" class="p-item cursor-pointer"><router-link to="/connexion" @click="menureset">Connexion</router-link></li>
@@ -43,6 +43,7 @@
             </div>
         </div>
     </transition>
+    {{lookatThisSmallTemplate()}}
 </template>
 
 <script>
@@ -109,6 +110,18 @@ export default {
             }
             
             console.log(showmenu.value)
+        },
+        lookatThisSmallTemplate = function() {
+            setTimeout(()=>{
+                // document.querySelector("nav.header_bar").addEventListener("click", function() {
+                //     menureset()
+                //     return
+                // })
+                document.querySelector("div.main").addEventListener("click", function() { 
+                    menureset()
+                    return
+                })
+            }, 100)
         }
         return {
             showmenuformation,
@@ -119,6 +132,7 @@ export default {
             menuForm,
             menureset,
             changeMenuForm,
+            lookatThisSmallTemplate,
             showmenuformationfunction
         }
     },

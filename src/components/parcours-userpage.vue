@@ -6,7 +6,7 @@
                     <div class="proposition w-full text-center mx-auto font-extralight my-8 sm:mt-10">
                         <h2 class="text-3xl w-full mb-5 leading-8 text-gray-700">Vous rêvez d'évoluer ou de changer de carrière?</h2>
                         <p class="text-xl font-semibold text-gray-800">Découvrez nos parcours</p>
-                        <button class="h-16  w-5/6 mx-auto mt-5 leaning-4 text-lg text-white bg-yellow-600">ACCEDEZ AUX PARCOURS</button>
+                        <button class="h-16  w-5/6 mx-auto mt-5 leaning-4 text-lg text-white bg-yellow-600"><router-link to="/parcours_pro"> AUX PARCOURS</router-link></button>
                     </div>
                     <img src="../assets/bannerImage.jpg" alt="Etudiante" class="object-cover h-full w-96 hidden md:inline-block">
                 </div>

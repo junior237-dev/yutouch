@@ -7,7 +7,7 @@
                 <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="parcours_pro" class="flex items-center"><span class="block"><i class="material-icons">school</i></span><span class="block text-sm ml-2">Parcours</span></router-link></li>
                 <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="notifications" class="flex items-center"><span class="block"><i class="material-icons">notifications</i></span><span class="block text-sm ml-2">Notifications</span></router-link></li>
                 <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="favoris" class="flex items-center"><span class="block"><i class="material-icons">favorite_border</i></span><span class="block text-sm ml-2">Favoris</span></router-link></li>
-                <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="profil/informations_personnelles" class="flex items-center"><span class="block"><i class="material-icons">person</i></span><span class="block text-sm ml-2">Profil</span></router-link></li>
+                <li class="h-11 text-gray-600 cursor-pointer hover:text-yellow-300"><router-link to="profil_utilisateur/profil/informations_personnelles" class="flex items-center"><span class="block"><i class="material-icons">person</i></span><span class="block text-sm ml-2">Profil</span></router-link></li>
             </ul>
         </div>
         <router-view></router-view>

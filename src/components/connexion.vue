@@ -5,7 +5,7 @@
                 <div class="title">
                     <h1 class="text-xl leading-8 text-gray-700 my-5 mx-auto w-4/5">Identifiez-vous</h1>
                     <div class="subtitle text-sm text-gray-500 -mt-4 w-4/5 mx-auto">
-                       ou alors <a class="text-blue-400">créer un compte</a>
+                       ou alors <router-link to="/inscription" class="text-blue-400">créer un compte</router-link>
                     </div>
                 </div>
                 <div class="form w-full mb-12 mt-10">
