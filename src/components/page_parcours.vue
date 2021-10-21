@@ -92,12 +92,20 @@
     <span class="h1">Vous souhaitez trouver un travail ou évoluer dans votre carrière ? Vous voulez vous orienter vers le métier de développeur web ? Remplissez ce formulaire et nous vous recontactons directement</span>
     <div class="form">
       <form class="left">
-        <label for="prenom">prénom</label>
-        <input type="text">
-        <label for="nom">nom</label>
-        <input type="text">
-        <label for="email">email</label>
-        <input type="email">
+        <div>
+          <label for="prenom">prénom</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label for="nom">nom</label>
+          <input type="text">
+        </div>
+        
+        <div>
+          <label for="email">email</label>
+          <input type="email">
+        </div>
 
         <button>Envoyer ma demande</button>
 
@@ -268,9 +276,9 @@
   </div>
 
   <div class="enterpriseLog">
-    <img src="../assets/startUp.png" alt="StartUp Academy">
-    <img src="../assets/jureEntrepreneur.png" alt="Cabinet Jure Entrepreneur">
-    <img src="../assets/eagleVision.png" alt="Eagle Vision">
+    <div class="img"><img src="../assets/startUp.png" alt="StartUp Academy"></div>
+    <div class="img"><img src="../assets/jureEntrepreneur.png" alt="Cabinet Jure Entrepreneur"></div>
+    <div class="img"><img src="../assets/eagleVision.png" alt="Eagle Vision"></div>
   </div>
 
   <Footer />
@@ -349,7 +357,7 @@ $gray: #3F4348;
 }
 
 .chapters {
-  width: 48%;
+  width: 44em;
   margin: 0 auto 37px;
 
   .item_bullet {
@@ -383,6 +391,10 @@ $gray: #3F4348;
       font-size: 19px;
     }
 
+    .description {
+      text-align: justify;
+    }
+
     .voir_les_detail {
       ul {
         margin: 27px 0 0 0;
@@ -399,6 +411,7 @@ $gray: #3F4348;
 
       li {
         margin: 0 0 3px 0;
+        text-align: justify;
 
         i {
           font-size: 9px;
@@ -413,6 +426,14 @@ $gray: #3F4348;
       font-size: 16px;
       cursor: pointer;
     }
+  }
+
+  @media screen and (max-width: 744px) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -431,7 +452,7 @@ $gray: #3F4348;
   }
 
   p {
-    font-size: 20px;
+    font-size: 19px;
     width: 68%;
     margin: 0 auto 30px;
     text-align: center;
@@ -439,7 +460,7 @@ $gray: #3F4348;
 
   .content {
     margin: 85px auto 0;
-    width: fit-content;
+    width: 64em;
     display: flex;
 
     img {
@@ -454,22 +475,58 @@ $gray: #3F4348;
       margin: 0 0 40px 0;
     }
 
+    .left, .right {
+      text-align: justify;
+      width: 50%;
+    }
+
     .left {
       margin: 0 20px 0 0;
     }
 
     .description h1 {
+      text-align: left;
       font-size: 19px;
       font-weight: bold;
       margin: 0 0 12px 0;
     }
 
     .description span {
-      width: 400px;
-      text-align: left;
+      text-align: justify;
       display: block;
       font-size: 17px;
       color: #999999;
+    }
+
+    @media screen and (max-width: 1054px) {
+      flex-direction: column;
+      width: 40em;
+      margin-left: auto;
+      margin-right: auto;
+
+      .left, .right {
+        width: 100%;
+        // background-color: #CCCCCC;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+
+    @media screen and (max-width: 373px) {
+      margin-top: 60px;
+
+      .item {
+        flex-direction: column;
+
+        img {
+          margin-bottom: 10px;
+          margin-left: 30px;
+        }
+      }
     }
   }
 
@@ -480,6 +537,14 @@ $gray: #3F4348;
     background-color: #1CB2F1;
     border-radius: 3px;
     margin: 30px 0 50px;
+  }
+
+  @media screen and (max-width: 373px) {
+    p {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }   
   }
 }
 
@@ -499,10 +564,13 @@ $gray: #3F4348;
   .form {
     display: flex;
     margin: 67px auto 0;
-    width: 55%;
+    width: 64em;
+    text-align: justify;
 
     .left {
       margin: 0 50px 0 90px;
+      width: 50%;
+      text-align: left;
 
       label {
         display: block;
@@ -544,6 +612,7 @@ $gray: #3F4348;
     }
 
     .right {
+      width: 50%;
       .link {
         color: #058ec9;
         cursor: pointer;
@@ -587,6 +656,94 @@ $gray: #3F4348;
         }
       }
     }
+
+    @media screen and (max-width: 1074px) {
+      flex-direction: column;
+      width: 100%;
+
+      .left, .right {
+        width: 38em;
+        // background-color: #AFB5BA;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .left {
+        margin-bottom: 25px;
+
+        div {
+          width: fit-content;
+          margin: auto;
+
+          label {
+            text-align: left;
+          }
+
+          input {
+            text-align: left;
+          }
+        }
+      }
+
+      .right {
+        .first {
+          width: fit-content;
+          text-align: justify;
+          // background-color: #AFB5BA;
+        }
+
+        .second{
+          text-align: left;
+          // background-color: #AFB5BA;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+
+          /* li, i {
+            margin-left: 0;
+          } */
+        }
+        
+        .third {
+          width: fit-content;
+        }
+      }
+    }
+
+    @media screen and (max-width: 662px) {
+      .left, .right {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        // background-color: #AFB5BA;
+      }
+    }
+
+    @media screen and (max-width: 387px) {
+      .left {
+        div {
+          width: 100%;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        button {
+          width: 100%;
+          padding: 5%;
+          font-size: 5vw;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 662px) {
+    .h1 {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -601,7 +758,7 @@ $gray: #3F4348;
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     color: #3F4348;
     margin: 20px auto;
     width: 65%;
@@ -613,7 +770,7 @@ $gray: #3F4348;
     padding: 20px 0 20px 0;
     color: #3F4348;
     display: flex;
-    width: 60%;
+    width: 64em;
     margin: auto;
 
     .avis {
@@ -798,29 +955,91 @@ $gray: #3F4348;
         }
       }
     }
+
+    @media screen and (max-width: 1074px) {
+      flex-direction: column;
+      width: 44em;
+      margin-left: auto;
+      margin-right: auto;
+
+      .avis {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (max-width: 740px) {
+      width: 100%;
+      // margin-left: 10px;
+      // margin-right: 10px;
+    }
+
+    @media screen and (max-width: 398px) {
+      margin-left: 0px;
+      margin-right: 0px;
+
+      .commentaire {
+        .head {
+          flex-direction: column;
+          
+          .pagination {
+            margin-top: 10px;
+
+            div {
+              margin-right: 10px;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    h1, p {
+      width: 95%;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 558px) {
+    h1, p {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
   }
 }
 
 .enterpriseLog {
-    padding: 150px;
-    display: flex;
-    text-align: center;
-    width: fit-content;
-    margin: auto;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  width: fit-content;
+  margin: 8em auto;
+
+  div {
+    width: 17em;
+    height: 13em;
 
     img {
-      width: 210px;
-      margin: 0 0 0;
+      width: 100%;
+      height: 100%;
     }
+  }
 
-    @media screen and (max-width: 510px) {
-      flex-direction: column;
+  @media screen and (max-width: 838px) {
+    flex-direction: column;
+    margin: 5em auto;
 
-      img {
-        margin: 0 0 15px 0;
-      }
+    div {
+      margin: 1em;
     }
+  }
+
+  @media screen and (max-width: 320px) {
+    div {
+      width: 15em;
+      height: 11em;
+    }
+  }
 }
 </style>
