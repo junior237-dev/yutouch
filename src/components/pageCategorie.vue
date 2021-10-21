@@ -1,10 +1,10 @@
 <template>
   <Header />
-
+  
   <div class="page_categorie">
     <div class="location small">
       <span>Vous êtes ici : </span>
-      <span class="link">Accueil </span>
+      <span class="link">Accueil</span>
       <span> > </span>
       <span class="link">Formation</span>
       <span> > </span>
@@ -21,7 +21,6 @@
             <span class="title">331 tuto Web</span>
             <span class="small"><i>(plus d'infos)</i> </span>
           </div>
-
           <div class="right">
             <span class="active">les + populaires</span>
             <span> / </span>
@@ -33,19 +32,7 @@
 
         <div class="videos">
           <div class="video" v-for="i in 12" :key="i">
-              <div class="video_img">
-                  <img class="formation" src="../assets/formation.png" alt="Formation">
-                  <img class="formateur" src="../assets/cover2.jpg" alt="Formateur">
-              </div>
-              <div class="info">Les possibilités insoupçconnées des calques courbes de transfert de dégradé dans photoshop CC</div>
-              <div class="autor gray"> de <span class="blue">Pascal Gauch</span> - Durée : 23m49s</div>
-              <div class="star">
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star checked"></i>
-                  <i class="fas fa-star"></i>
-              </div>
+            <category-element />
           </div>
         </div>
       </div>
@@ -91,6 +78,7 @@
 import Footer from './footer.vue'
 import Header from './header.vue'
 import Sidebar from './sidebar.vue'
+import categoryElement from './category-element.vue'
 
 export default {
   name: 'pageCategorie',
@@ -103,13 +91,37 @@ export default {
     }
   },
   
-  components: { Footer, Header, Sidebar },
+  components: { Footer, Header, Sidebar, categoryElement },
 
   created() {
     window.addEventListener('resize', this.checkScreen);
     window.addEventListener('resize', this.checkScreenAgain);
     this.checkScreen()
     this.checkScreenAgain()
+  },
+
+  setup() {
+    let logiciels= [
+      'WordPress',
+      'Jomia',
+      'Dreamweaver',
+      'Google',
+      'Cloud',
+      'Elementor',
+      'Internet',
+      'WIX',
+      'Drupal',
+      'Contribute',
+      'Dotclear',
+      'IWeb',
+      'Magneto',
+      'iWeb',
+      'Spip',
+      'Viadeo'
+    ]
+    return {
+      logiciels
+    }
   },
 
   methods: {
@@ -136,6 +148,7 @@ export default {
       }
     }
   }
+
 }
 </script>
 
@@ -258,12 +271,12 @@ span {
           }
 
           .autor {
-              font-size: 14px;
-              margin: 0 0 5px 0;
+            font-size: 14px;
+            margin: 0 0 5px 0;
           }
 
           .star .checked {
-              color: #ffc241;
+            color: #ffc241;
           }
         }
       }

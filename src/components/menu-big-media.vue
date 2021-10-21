@@ -5,17 +5,17 @@
             <transition name="transitionpanel">
                 <formation-panel v-if="showpanel"/>
             </transition>
-            <li class="cursor-pointer"><a>Parcours  Pro</a></li>
+            <li class="cursor-pointer"><router-link to="">Parcours  Pro</router-link></li>
             <li class="cursor-pointer"><a>Promo</a></li>
             <li class="cursor-pointer rounded-full" @click='showsearchbarfunction'><i class="material-icons">search</i></li>
         </ul>
         <ul class="second-part w-1/2 flex justify-around text-white text-sm font-light ml-3 mr-8 relative">
-            <li class="cursor-pointer flex items-center active-item-menu"  @click='showhelpfunction'>Aide<i class="material-icons tiny">arrow_drop_down</i></li>
+            <li class="cursor-pointer flex items-center"  @click='showhelpfunction'>Aide<i class="material-icons tiny">arrow_drop_down</i></li>
             <transition name="transitionhelp">
                 <help v-if="showhelp" class="text-black absolute top-8 -left-16"/>
             </transition>
-            <li class="cursor-pointer"><a>Connexion</a></li>
-            <li class="cursor-pointer"><a>Créer Compte</a></li>
+            <li class="cursor-pointer"><router-link to="/connexion">Connexion</router-link></li>
+            <li class="cursor-pointer"><router-link to="/inscription">Créer Compte</router-link></li>
         </ul>
         <transition name="transitionsearchbar">
             <searchbar v-if="showsearchbar" class="text-black"/>

@@ -21,16 +21,16 @@ import PageParcours from './components/pageParcours.vue'
 // import PageFormation from './components/pageFormation.vue'
 /*import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue' 
-import footVuejs from './components/footer.vue'*/
+import footVuejs from './components/footerVuejs.vue'*/
 
 
 export default {
   name: 'App',
   components: {
-     /*headVuejs,
-    mainVuejs, 
-    footVuejs, 
-    footVuejs,*/
+    // headVuejs,
+    // mainVuejs, 
+    // footVuejs, 
+    // footVuejs,
     // PageFormation, 
     // PageCategorie,
     // TousLesParcours,

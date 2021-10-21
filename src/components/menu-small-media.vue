@@ -1,6 +1,6 @@
 <template>
     <div class="menu-icone inline-block h-auto mr-3 lg:hidden">
-        <i class="material-icons text-white text-4xl font-bold" @click="changeMenuForm">dehaze</i>
+        <i class="menu-icon material-icons text-white text-4xl font-bold cursor-pointer" @click="changeMenuForm">{{menuForm}}</i>
     </div>
     <transition name="showmenuicon">
         <div class="menu w-full overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
@@ -15,32 +15,30 @@
                     </div>
                 </form>
                 <ul class="items-menu list-none text-left text-base text-white mt-5">
-                    <li id="formations" class="p-item relative">Formations <i class="material-icons text-base" @click="showmenuformationfunction">arrow_drop_down</i></li>
-                    <transition name="menuformation">
-                        <div class="h-60 w-5/6 mx-auto bg-gray-600 overflow-scroll"  v-if="showmenuformation">
+                    <li id="formations" class="p-item relative cursor-pointer" @click="showmenuformationfunction">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
+                        <div class="h-60 w-5/6 mx-auto overflow-y-scroll"  v-if="showmenuformation">
                             <div class="thematic w-4/5 mx-auto">
                                 <h2 class="text-sm font-semibold">THEMATIQUES</h2>
                                 <ul class="thematic w-1/2 ml-8">
-                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in themElements" :key="index">{{item}}</li>
+                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in themElements" :key="index"><router-link to="/page_categorie" @click="menureset">{{item}}</router-link></li>
                                 </ul>
 
                                 <h2 class="text-sm font-semibold mt-8">COURS POPULAIRES</h2>
                                 <ul class="popularLesson w-1/2 ml-8">
-                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in popularLesson" :key="index">{{item}}</li>
+                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in popularLesson" :key="index"><router-link to="/page_categorie" @click="menureset">{{item}}</router-link></li>
                                 </ul>
 
                                 <h2 class="text-sm font-semibold mt-8">PARCOURS PRO</h2>
                                 <ul class="proCourse w-1/2 ml-8">
-                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in proCourse" :key="index">{{item}}</li>
+                                    <li class="leading-8 text-xs w-40 font-light border-transparent cursor-pointer text-yellow-500" v-for="(item, index) in proCourse" :key="index"><router-link to="/page_categorie" @click="menureset">{{item}}</router-link></li>
                                 </ul>
                             </div>
                         </div>
-                    </transition>
-                    <li id="parcours_pro" class="p-item">Parcours Pro</li>
-                    <li id="promos" class="p-item">Promos</li>
-                    <li id="aide" class="p-item">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
-                    <li id="connexion" class="p-item">Connexion</li>
-                    <li id="créer_un_compte" class="p-item">Créer un Compte</li>
+                    <li id="parcours_pro" class="p-item cursor-pointer">Parcours Pro</li>
+                    <li id="promos" class="p-item cursor-pointer">Promos</li>
+                    <li id="aide" class="p-item cursor-pointer">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
+                    <li id="connexion" class="p-item cursor-pointer"><router-link to="/connexion" @click="menureset">Connexion</router-link></li>
+                    <li id="créer_un_compte" class="p-item cursor-pointer"><router-link to="/inscription" @click="menureset">Créer un Compte</router-link></li>
                 </ul>
             </div>
         </div>
@@ -92,7 +90,12 @@ export default {
             'Digital'
         ]
         let showmenu = ref(false),
+        menuForm = ref('dehaze'),
         showmenuformation = ref(false),
+        menureset = function() {
+            showmenu.value = false
+            document.querySelector('i.menu-icon').innerHTML = "dehaze"   
+        },
         showmenuformationfunction = function() {
             showmenuformation.value = !showmenuformation.value
         }
@@ -113,6 +116,8 @@ export default {
             proCourse,
             themElements,
             showmenu,
+            menuForm,
+            menureset,
             changeMenuForm,
             showmenuformationfunction
         }
@@ -130,14 +135,6 @@ export default {
         margin: 7px 0;
         font-weight: bold;
         
-    }
-
-    .menuformation-enter-from, .menuformation-leave-to {
-        opacity: 0;
-        transform: translateY(-70px)
-    }
-    .menuformation-enter-active, .menuformation-leave-active {
-        transition: opacity .5s ease, transform .5s ease
     }
     
 
