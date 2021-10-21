@@ -237,7 +237,7 @@
 <script>
 import Footer from './footer.vue'
 export default {
-    name: 'page_formation',
+    name: 'pageFormation',
 
     components: {
         Footer

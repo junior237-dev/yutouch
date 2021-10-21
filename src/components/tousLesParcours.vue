@@ -37,7 +37,7 @@
 <script>
 import Footer from './footer.vue'
 import HeadEtTabs from './headEtTabs.vue'
-import Image_container from './image_container.vue'
+import Image_container from './imageContainer.vue'
 export default {
     components: { Footer, Image_container, HeadEtTabs },
     name: 'tousLesParcours',

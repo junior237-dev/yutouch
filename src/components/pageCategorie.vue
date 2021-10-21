@@ -93,7 +93,7 @@ import Header from './header.vue'
 import Sidebar from './sidebar.vue'
 
 export default {
-  name: 'page_categorie',
+  name: 'pageCategorie',
 
   data() {
     return {

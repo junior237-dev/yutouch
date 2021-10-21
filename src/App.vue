@@ -3,22 +3,22 @@
      <!-- <head-vuejs /> -->
     <!--<main-vuejs/>
     <foot-vuejs /> -->
-    <!-- <Page_formation />  -->
-    <!-- <Page_categorie /> -->
+    <!-- <PageFormation />  -->
+    <!-- <PageCategorie /> -->
     <!-- <foot-vuejs /> -->
-    <TousLesParcours />
-    <!-- <Page_parcours /> -->
+    <!-- <TousLesParcours /> -->
+    <PageParcours />
   </div>
 </template>
 
 <script>
-// import Page_parcours from './components/page_parcours.vue'
-// import Page_categorie from './components/page_categorie.vue'
-import TousLesParcours from './components/tousLesParcours.vue'
+import PageParcours from './components/pageParcours.vue'
+// import PageCategorie from './components/pageCategorie.vue'
+// import TousLesParcours from './components/tousLesParcours.vue'
 //  import headVuejs from './components/header.vue'
 // import mainVuejs from './components/main.vue'
 // import footVuejs from './components/footer.vue' 
-// import Page_formation from './components/page_formation.vue'
+// import PageFormation from './components/pageFormation.vue'
 /*import headVuejs from './components/header.vue'
 import mainVuejs from './components/main.vue' 
 import footVuejs from './components/footer.vue'*/
@@ -31,10 +31,10 @@ export default {
     mainVuejs, 
     footVuejs, 
     footVuejs,*/
-    // Page_formation, 
-    // Page_categorie,
-    TousLesParcours,
-    // Page_parcours,
+    // PageFormation, 
+    // PageCategorie,
+    // TousLesParcours,
+    PageParcours,
   }
 }
 </script>

@@ -286,10 +286,10 @@
 
 <script>
 import HeadEtTabs from './headEtTabs.vue'
-import Image_container from './image_container.vue'
+import Image_container from './imageContainer.vue'
 import Footer from './footer.vue'
 export default {
-    name: 'page_parcours',
+    name: 'pageParcours',
 
     data() {
       return {
