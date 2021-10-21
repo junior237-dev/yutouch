@@ -25,9 +25,9 @@
         <h1>Ils nous font confiance</h1>
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit molestiae aliquam quo eum quis aliquid ducimus eveniet, quaerat perferendis excepturi adipisci ut accusamus voluptates atque culpa necessitatibus quibusdam iusto labore inventore facere autem? Pariatur facilis necessitatibus, beatae adipisci laudantium harum. Esse nesciunt temporibus facere aliquam!</span>
         <div class="enterpriseLog">
-            <img src="../assets/startUp.png" alt="StartUp Academy">
-            <img src="../assets/jureEntrepreneur.png" alt="Cabinet Jure Entrepreneur">
-            <img src="../assets/eagleVision.png" alt="Eagle Vision">
+            <div class="img"><img src="../assets/startUp.png" alt="StartUp Academy"></div>
+            <div class="img"><img src="../assets/jureEntrepreneur.png" alt="Cabinet Jure Entrepreneur"></div>
+            <div class="img"><img src="../assets/eagleVision.png" alt="Eagle Vision"></div>
         </div>
     </div>
 
@@ -193,8 +193,8 @@ $blue: #00A9F0;
 
     @media screen and (max-width: 430px) {
         text-align: center;
-        padding: 0;
-        margin: 0 0 0 15px;
+        padding-left: 17px;
+        margin: 0 0 0 0;
         .card {
             // background-color: red;
             width: 100%;
@@ -206,16 +206,17 @@ $blue: #00A9F0;
 .confiance {
     background-color: white;
     padding: 55px 0 45px 0;
-    text-align: center;
 
     h1 {
         font-size: 30px;
         margin: 0 0 20px 0;
+        text-align: center;
         color: #3F4348;
     }
 
     span {
         font-size: 20px;
+        text-align: center;
         width: 68%;
         display: block;
         margin: auto;
@@ -223,24 +224,33 @@ $blue: #00A9F0;
     }
 
     .enterpriseLog {
-        padding: 40px;
         display: flex;
-        text-align: center;
         width: fit-content;
-        margin: auto;
+        margin: 8em auto;
 
-        img {
-            width: 110px;
-            margin: 0 0 0;
-        }
-    }
-
-    @media screen and (max-width: 510px) {
-        .enterpriseLog {
-            flex-direction: column;
+        div {
+            width: 17em;
+            height: 13em;
 
             img {
-                margin: 0 0 15px 0;
+            width: 100%;
+            height: 100%;
+            }
+        }
+
+        @media screen and (max-width: 838px) {
+            flex-direction: column;
+            margin: 5em auto;
+
+            div {
+            margin: 1em;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            div {
+            width: 15em;
+            height: 11em;
             }
         }
     }
