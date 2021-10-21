@@ -6,15 +6,15 @@
     <!-- <PageFormation />  -->
     <!-- <PageCategorie /> -->
     <!-- <foot-vuejs /> -->
-    <!-- <TousLesParcours /> -->
-    <PageParcours />
+    <TousLesParcours />
+    <!-- <PageParcours /> -->
   </div>
 </template>
 
 <script>
-import PageParcours from './components/pageParcours.vue'
+// import PageParcours from './components/pageParcours.vue'
 // import PageCategorie from './components/pageCategorie.vue'
-// import TousLesParcours from './components/tousLesParcours.vue'
+import TousLesParcours from './components/tousLesParcours.vue'
 //  import headVuejs from './components/header.vue'
 // import mainVuejs from './components/main.vue'
 // import footVuejs from './components/footer.vue' 
@@ -33,8 +33,8 @@ export default {
     // footVuejs,
     // PageFormation, 
     // PageCategorie,
-    // TousLesParcours,
-    PageParcours,
+    TousLesParcours,
+    // PageParcours,
   }
 }
 </script>

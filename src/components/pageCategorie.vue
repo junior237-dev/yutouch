@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import Footer from './footer.vue'
+import Footer from './footerVuejs.vue'
 import Header from './header.vue'
 import Sidebar from './sidebar.vue'
 import categoryElement from './category-element.vue'

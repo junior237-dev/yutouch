@@ -62,7 +62,7 @@ export default {
     }
 
     .active-menu {
-        color: rgba(245, 158, 11);
+        color: rgb(245, 158, 11);
     }
 
     .active-status-choice {

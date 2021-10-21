@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import home from "../components/home.vue"
-import pageFormation from "../components/page_formation.vue"
+import pageFormation from "../components/pageFormation.vue"
 import userPage from "../components/userpage.vue"
 import tutoUserpage from "../components/tuto-userpage.vue"
 import accueilUserpage from "../components/accueil-userpage.vue"
@@ -11,7 +11,7 @@ import favorisUserpage from "../components/favoris-userpage.vue"
 import profilUserpage from "../components/profil-userpage.vue"
 import inscription from "../components/inscription.vue"
 import connexion from "../components/connexion.vue"
-import pageCategorie from "../components/page_categorie.vue"
+import pageCategorie from "../components/pageCategorie.vue"
 
 const routes = [
     {

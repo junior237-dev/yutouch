@@ -1,5 +1,5 @@
 <template>
-  <div class="footerapp" v-if="false">
+  <div class="footerapp">
       <div class="main_footer">
           <ul class="tuto">
               <li class="title">YuTouch.com</li>
@@ -12,7 +12,7 @@
                             <span> <img :src="require('../assets/' + option.img + '.jpg' )" :alt="option.alt">{{option.title}}</span>
                         </div>
                     </div>
-                    
+
                     <div class="selected" ref="selected" @click="toggleDropdown">
                         <span> <img src="../assets/drapeau_france.jpg" alt="">Cours en Français</span> 
                     </div>

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Footer from './footer.vue'
+import Footer from './footerVuejs.vue'
 import HeadEtTabs from './headEtTabs.vue'
 import Image_container from './imageContainer.vue'
 export default {

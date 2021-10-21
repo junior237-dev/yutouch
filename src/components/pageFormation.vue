@@ -1,4 +1,6 @@
 <template>
+    <Header />
+
     <div class="page-formation w-full mx-auto">
         <div class="fixed_navbar" v-show="scrollNav">
             <ul class="navbar_info">
@@ -233,11 +235,13 @@
 
 <script>
 import Footer from './footerVuejs.vue'
+import Header from './header.vue';
 export default {
     name: 'pageFormation',
 
     components: {
-        Footer
+        Footer,
+        Header
     },
 
     data() {
