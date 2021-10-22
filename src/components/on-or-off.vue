@@ -16,9 +16,9 @@ export default {
     },
     setup() {
         let showonOroff = ref(true),
-        changeposition = function(e) {
+        changeposition = function() {
             showonOroff.value = !showonOroff.value
-            console.log(e.currentTarget)
+            // console.log(e.currentTarget)
         }
         return {
             showonOroff,

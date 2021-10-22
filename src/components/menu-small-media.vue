@@ -1,21 +1,21 @@
 <template>
-    <div class="menu-icone inline-block h-auto mr-3 lg:hidden">
+     <div class="menu-icone inline-block h-auto mr-3 lg:hidden">
         <i class="menu-icon material-icons text-white text-4xl font-bold cursor-pointer" @click="changeMenuForm">{{menuForm}}</i>
     </div>
     <transition name="showmenuicon">
-        <div class="menu w-full overflow-scroll bg-gray-900 z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
-            <div class="searchbar w-5/6 h-12 bg-white mx-auto rounded-md">
+        <div class="menu w-full overflow-scroll bg-white z-10 absolute top-24 left-0 right-0 pt-4" v-if="showmenu">
+            <div class="searchbar h-12 bg-white">
                 <form action="" method="">
-                    <div class="w-4/5 mx-auto flex items-center py-2" >
-                        <span class="inline-block w-1/6 text-left pr-2">
+                    <div class="w-4/5 border mx-auto flex items-center py-2 pl-2 rounded-md shadow-lg" >
+                        <span class="inline-block w-1/6 text-left ">
                             <i class="material-icons text-2xl text-black">search</i>
                         </span>
                         <label for="recherche" class="hidden">recherche de formations</label>
                         <input type="search" placeholder="Rechercher" class="text-center text-lg outline-none h-7 w-5/6 mb-2" id="search" name="search" >
                     </div>
                 </form>
-                <ul class="items-menu list-none text-left text-base text-white mt-5">
-                    <li id="formations" class="p-item relative cursor-pointer" @click="showmenuformationfunction">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
+                <ul class="items-menu list-none text-left text-base text-gray-500 mt-5">
+                    <li id="formations" class="p-item relative py-3 border-b border-gray-300 shadow-md text-yellow-500 pl-5 font-light cursor-pointer" @click="showmenuformationfunction">Formations <i class="material-icons text-base">arrow_drop_down</i></li>
                         <div class="h-60 w-5/6 mx-auto overflow-y-scroll"  v-if="showmenuformation">
                             <div class="thematic w-4/5 mx-auto">
                                 <h2 class="text-sm font-semibold">THEMATIQUES</h2>
@@ -34,22 +34,29 @@
                                 </ul>
                             </div>
                         </div>
-                    <li id="parcours_pro" class="p-item cursor-pointer"><router-link to="/parcours_pro" @click="menureset">Parcours Pro</router-link></li>
-                    <li id="promos" class="p-item cursor-pointer">Promos</li>
-                    <li id="aide" class="p-item cursor-pointer">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
-                    <li id="connexion" class="p-item cursor-pointer"><router-link to="/connexion" @click="menureset">Connexion</router-link></li>
-                    <li id="créer_un_compte" class="p-item cursor-pointer"><router-link to="/inscription" @click="menureset">Créer un Compte</router-link></li>
+                    <li id="parcours_pro" class="p-item relative py-3 border-b border-gray-300 shadow-md pl-5 font-light cursor-pointer"><router-link to="/parcours_pro" @click="menureset">Parcours Pro</router-link></li>
+                    <li id="promos" class="p-item relative py-3 border-b border-gray-300 shadow-md pl-5 font-light cursor-pointer">Promos</li>
+                    <li id="aide" class="p-item relative py-3 border-b border-gray-300 shadow-md pl-5 font-light cursor-pointer">Aide <i class="material-icons text-base">arrow_drop_down</i></li>
+                    <li id="connexion" class="p-item relative py-3 border-b border-gray-300 shadow-md pl-5 font-light cursor-pointer"><router-link to="/connexion" @click="menureset">Connexion</router-link></li>
+                    <li id="créer_un_compte" class="p-item relative py-3 border-b border-gray-300 shadow-md pl-5 font-light cursor-pointer"><router-link to="/inscription" @click="menureset">Créer un Compte</router-link></li>
                 </ul>
             </div>
         </div>
+    </transition>
+    <transition name="showmenuicon">
+        <secondsmall-menu v-if="false" />
     </transition>
     {{lookatThisSmallTemplate()}}
 </template>
 
 <script>
 import {ref} from 'vue'
+import secondsmallMenu from "./second-small-menu.vue"
 export default {
     name: "menu-small-media",
+    components: {
+        secondsmallMenu
+    },
     setup() {
         let themElements = [
             'Photographie & retouche',
@@ -113,15 +120,11 @@ export default {
         },
         lookatThisSmallTemplate = function() {
             setTimeout(()=>{
-                // document.querySelector("nav.header_bar").addEventListener("click", function() {
-                //     menureset()
-                //     return
-                // })
                 document.querySelector("div.main").addEventListener("click", function() { 
                     menureset()
                     return
                 })
-            }, 100)
+            }, 150)
         }
         return {
             showmenuformation,
@@ -145,7 +148,6 @@ export default {
     }
     ul.items-menu li.p-item{
         line-height: 50px;
-        border-bottom: solid gray 1px;
         margin: 7px 0;
         font-weight: bold;
         

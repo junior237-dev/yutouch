@@ -12,7 +12,7 @@
                             <span ref="optio"> <img src="../assets/drapeau_france.jpg" :alt="option.alt">{{option.langue}}</span>
                         </div>
                         <div class="option" v-for="option in options" :key="option.id" @click="select">
-                            <span> <img :src="require('../assets/' + option.img + '.jpg' )" :alt="option.alt">{{option.title}}</span>
+                            <span> <img :src="require(option.img)" :alt="option.alt">{{option.title}}</span>
                         </div>
                     </div>
                     <div class="selected" ref="selected" @click="toggleDropdown">

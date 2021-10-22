@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import accesformateur from "../components/accesformateurComponent.vue"
 import promo from "../components/promotion.vue"
 import home from "../components/home.vue"
 import pageFormation from "../components/page_formation.vue"
@@ -19,6 +20,11 @@ import connexion from "../components/connexion.vue"
 import pageCategorie from "../components/page_categorie.vue"
 
 const routes = [
+    {
+        name: "acces_formateur",
+        path: "/acces_formateur",
+        component: accesformateur
+    },
     {
         name: "home",
         path: "/",
